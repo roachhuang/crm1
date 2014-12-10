@@ -2,20 +2,26 @@
 
 	<!--  ng-app used to specify the module name used to define what module have to used to show data in view using the controller. if no any module define the controller  than np-app will be blank. -->
 
-<html ng-app="listpp" lang="en">
+<html ng-app="crmApp" lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Angular Example</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js">
-	</script>
-    <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	<title>Asiayo CRM</title>
+	<!--
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.1/css/bootstrap.no-icons.min.css" rel="stylesheet">
+	-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/2.0/css/font-awesome.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-route.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-sanitize.js"></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.2.6/ng-csv.min.js'></script>
+    
 	<!-- including the controller file which controlls the data to be presented in html -->
 
 	<script src="controller.js"></script>
 </head>
-<body id="outer" ng-controller="PhoneListCtrl">
+<body id="outer" ng-controller="CrmController">
 	 <script type="text/javascript">
         var sortingOrder = 'name';
     </script>
@@ -79,11 +85,9 @@
                     </td>
             </tfoot>
             <tbody ng-init="get_product()">
-            	<tr ng-repeat="product in pagedItems | filter:query | orderBy:sortField:reverse">
+            	<tr ng-repeat="product in rows | filter:query | orderBy:sortField:reverse">
 			      	<!-- <td>{{ product.id }}</td> -->
-					<td>
-						<div ng-hide='editingData[row.id]'>{{ product.prod_name | uppercase }}</div>
-					</td>
+					<td>{{ product.prod_name | uppercase }}</td>
 					<td>{{ product.prod_desc }}</td>
 					<td>{{ product.prod_price }}</td>
 					<td>{{ product.prod_quantity }}</td>		
