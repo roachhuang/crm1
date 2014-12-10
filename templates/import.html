@@ -1,0 +1,11 @@
+<div class="row">
+    <form name="uploadForm" reset-form="resetForm" ng-submit="selector.submitUpload()" ng-controller="DesignViewCtrl" enctype="multipart/form-data">
+        <div class="col-md-8">
+            <input type="file" name="spreadsheet" ng-file-select="onFileSelect($files)" />
+        </div>
+        <div class="col-md-2">
+            <input type="submit" value="&nbsp;&nbsp;Import&nbsp;&nbsp;" class="btn btn-success" />
+            <p ng-show="uploaded">Success! <a ng-href="/batches/{{batchID}}">Show batch</a></p>
+        </div>
+    </form>
+</div>
