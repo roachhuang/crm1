@@ -36,13 +36,13 @@
                   );
         };  
 
-        factory.submit = function(){
+        factory.submit = function(row){
             return $http.post('db.php?action=add_row', 
                 {
-                'prod_name'     : $scope.prod_name, 
-                'prod_desc'     : $scope.prod_desc, 
-                'prod_price'    : $scope.prod_price,
-                'prod_quantity' : $scope.prod_quantity
+                prod_name: row.prod_name,
+                prod_desc: row.prod_desc, 
+                prod_price: row.prod_price,
+                prod_quantity: row.prod_quantity
                 }
             );
         };                

@@ -39,17 +39,8 @@ function add_row() {
     print_r($data);
     $qry = 'INSERT INTO crm (prod_name,prod_desc,prod_price,prod_quantity) values ("' . $prod_name . '","' . $prod_desc . '",' .$prod_price . ','.$prod_quantity.')';
    
-    $qry_res = mysql_query($qry);
-    if ($qry_res) {
-        $arr = array('msg' => "row Added Successfully!!!", 'error' => '');
-        $jsn = json_encode($arr);
-        // print_r($jsn);
-    } 
-    else {
-        $arr = array('msg' => "", 'error' => 'Error In inserting record');
-        $jsn = json_encode($arr);
-        // print_r($jsn);
-    }
+    mysql_query($qry) or die('fail to add in db.php');
+    
 };
 
 
@@ -125,7 +116,7 @@ function update_row(){
     $qry = "UPDATE `crm` set `prod_name`='".$prod_name."' , `prod_desc`='".$prod_desc."',`prod_price`='".$prod_price."',`prod_quantity`='".$prod_quantity."' WHERE `id`=".$id;
     //$qry = sprintf("UPDATE crm set prod_name=%s, $prod_name=%s, prod_desc=%s, prod_price=%d, prod_quantity=%d WHERE id=%d")  
     //$qry = "UPDATE crm set prod_name='mark' where id=1";
-    mysql_query($qry) or die('fail to update');     
+    mysql_query($qry) or die('fail to update in db.php');     
 }
 
 function __destruct(){

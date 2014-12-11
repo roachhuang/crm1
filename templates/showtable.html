@@ -2,15 +2,17 @@
 	<br/>
 	<br/>
 	<h4>Add row</h4>
+	
 	<form name="add_row">
 		<input type="hidden" name="prod_id" ng-model="row.prod_id">
 		<input type="text" name="prod_name" ng-model="row.prod_name" placeholder="Enter row Name">
 		<input type="text" name="prod_desc" ng-model="row.prod_desc" placeholder="Enter row Description">
 		<input type="text" name="prod_price" ng-model="row.prod_price" placeholder="Enter row Price">
 		<input type="text" name="prod_quantity" ng-model="row.prod_quantity" placeholder="Enter row Quantity">
-		<input type="button" name="submit_row" ng-show='add_prod' value="Submit" ng-click="row_submit(row)">
-		<input type="button" name="update_row" ng-show='update_prod' value="Update" ng-click="update_row(row)">
+		<input type="button" name="submit_row" ng-show='showAddBtn' value="Submit" ng-click="row_submit(row)">
+		<input type="button" name="update_row" ng-hide='showAddBtn' value="Update" ng-click="update_row(row)">
 	</form>
+
 	<br/>		
 	<h4>Search row</h4>
 	<div class="input-append">

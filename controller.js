@@ -14,6 +14,9 @@
     $scope.rows =  [];
     $scope.row = [];
     $scope.currentPage   =  0;
+    $scope.reverse = false;
+    $scope.sortField = 'prod_name';
+    $scope.showAddBtn = true;
 
     /** function to get detail of row added in mysql referencing php **/
 
@@ -29,13 +32,13 @@
 
     /** function to add details for rows in mysql referecing php **/
 
-    $scope.row_submit = function() {
-        datafactory.submit()       
+    $scope.row_submit = function(row) {
+        dataFactory.submit(row)       
         .success(function (data, status, headers, config) {
           $scope.get_row(); 
         })
         .error(function(data, status, headers, config){
-           
+           console.log('fail to add a row')
         });
     };
 
@@ -53,9 +56,10 @@
 
     /** fucntion to edit row details from list of row referencing php **/
 
-    $scope.prod_edit = function(index) {  
-      $scope.update_prod = true;
-      $scope.add_prod = false;
+    $scope.prod_edit = function(index) {
+        $scope.showAddBtn = false;  
+      //$scope.update_prod = true;
+      //$scope.add_prod = false;
       dataFactory.editRow(index)     
         .success(function (data, status, headers, config) {    
             //alert(data[0]["prod_name"]);
@@ -89,6 +93,7 @@
                         console.log('bad');
                     });
         */
+        $scope.showAddBtn=true;
         dataFactory.updateRow(row)
             .success(function (data, status, headers, config) {
                   $scope.get_row(); // callback when success
