@@ -1,5 +1,5 @@
 (function(){    
-    var app = angular.module('crmApp', ['ngRoute', 'ngCsv']);    
+    var app = angular.module('crmApp', ['ngRoute', 'ngCsv', 'MyFactory']);    
 
     /* variable app is  a variable which used to control the array values to show the data to show in view  using the module name 'app' with arguments as an array */
 
@@ -12,11 +12,12 @@
     $scope.groupedItems  =  [];
     $scope.itemsPerPage  =  3;
     $scope.rows =  [];
+    $scope.row = [];
     $scope.currentPage   =  0;
 
-    /** function to get detail of product added in mysql referencing php **/
+    /** function to get detail of row added in mysql referencing php **/
 
-    $scope.get_product = function() {
+    $scope.get_row = function() {
         dataFactory.getData()
             .success(function(data){
                 $scope.rows=data;              
@@ -26,91 +27,80 @@
             });
     };
 
-    /** function to add details for products in mysql referecing php **/
+    /** function to add details for rows in mysql referecing php **/
 
-    $scope.product_submit = function() {
-        $http.post('db.php?action=add_product', 
-            {
-                'prod_name'     : $scope.prod_name, 
-                'prod_desc'     : $scope.prod_desc, 
-                'prod_price'    : $scope.prod_price,
-                'prod_quantity' : $scope.prod_quantity
-            }
-        )
+    $scope.row_submit = function() {
+        datafactory.submit()       
         .success(function (data, status, headers, config) {
-          $scope.get_product();
+          $scope.get_row(); 
         })
-
         .error(function(data, status, headers, config){
            
         });
     };
 
-    /** function to delete product from list of product referencing php **/
+    /** function to delete row from list of row referencing php **/
 
     $scope.prod_delete = function(index) {  
-     
-      $http.post('db.php?action=delete_product', 
-            {
-                'prod_index'     : index
-            }
-        )      
-        .success(function (data, status, headers, config) {    
-             $scope.get_product();
+        dataFactory.deleteRow(index)      
+            .success(function (data, status, headers, config) {    
+               $scope.get_row();
         })
-
         .error(function(data, status, headers, config){
            
         });
     };
 
-    /** fucntion to edit product details from list of product referencing php **/
+    /** fucntion to edit row details from list of row referencing php **/
 
     $scope.prod_edit = function(index) {  
       $scope.update_prod = true;
       $scope.add_prod = false;
-      $http.post('db.php?action=edit_product', 
-            {
-                'prod_index'     : index
-            }
-        )      
+      dataFactory.editRow(index)     
         .success(function (data, status, headers, config) {    
             //alert(data[0]["prod_name"]);
-            $scope.prod_id          =   data[0]["id"];
-            $scope.prod_name        =   data[0]["prod_name"];
-            $scope.prod_desc        =   data[0]["prod_desc"];
-            $scope.prod_price       =   data[0]["prod_price"];
-            $scope.prod_quantity    =   data[0]["prod_quantity"];
-
+            // 2-way data binding
+            $scope.row.prod_id          =   data[0]["id"];
+            $scope.row.prod_name        =   data[0]["prod_name"];
+            $scope.row.prod_desc        =   data[0]["prod_desc"];
+            $scope.row.prod_price       =   data[0]["prod_price"];
+            $scope.row.prod_quantity    =   data[0]["prod_quantity"];
         })
+        .error(function(data, status, headers, config){ 
 
-        .error(function(data, status, headers, config){
-           
         });
     };
 
-    /** function to update product details after edit from list of products referencing php **/
+    /** function to update row details after edit from list of rows referencing php **/
 
-    $scope.update_product = function() {
-
-        $http.post('db.php?action=update_product', 
+    $scope.update_row = function(row) {
+        /*
+        $http.post('./db.php?action=update_row', 
                     {
-                        'id'            : $scope.prod_id,
-                        'prod_name'     : $scope.prod_name, 
-                        'prod_desc'     : $scope.prod_desc, 
-                        'prod_price'    : $scope.prod_price,
-                        'prod_quantity' : $scope.prod_quantity
-                    }
-                  )
-                .success(function (data, status, headers, config) {
-                  $scope.get_product();
+                     'id': row.prod_id,
+                     'prod_name': row.prod_name,
+                     'prod_desc': row.prod_desc, 
+                     'prod_price': row.prod_price,
+                     'prod_quantity': row.prod_quantity
+                    }).success(function(data, status, headers, config){
+                        console.log('good');
+                    }).
+                    error(function(data, status, headers, config){
+                        console.log('bad');
+                    });
+        */
+        dataFactory.updateRow(row)
+            .success(function (data, status, headers, config) {
+                  $scope.get_row(); // callback when success
                 })
-                .error(function(data, status, headers, config){
+            .error(function(data, status, headers, config){
+                console.log('what the fuck');
                    
-                });
+            });        
+            
     };
 
-    /** function to call prvious page , click on paging items button previous for product list **/
+    /** function to call prvious page , click on paging items button previous for row list **/
 
     $scope.prevPage = function() {        
         if ($scope.currentPage > 0) {
@@ -118,14 +108,14 @@
         }
     };
 
-    /** function to set current page on paging items for product list **/
+    /** function to set current page on paging items for row list **/
 
     $scope.setPage = function() { 
         alert(this.n);
         $scope.currentPage = this.n;
     };
 
-    /** function to call next page , click on paging items button next for product list **/
+    /** function to call next page , click on paging items button next for row list **/
 
     $scope.nextPage = function() {
         if ($scope.currentPage < $scope.pagedItems.length - 1) {
@@ -133,7 +123,7 @@
         }
     };    
 
-    /** fucntion to define the total number of pages, in reference of product list items based upon itemsperpage **/
+    /** fucntion to define the total number of pages, in reference of row list items based upon itemsperpage **/
 
     $scope.range = function (start, end) {             
         var ret = [];
@@ -153,8 +143,8 @@
         $routeProvider.
         when("/showtable",
             {           
-                //controller: 'tblCtrl',
-                //templateUrl: "./templates/showtable.html"
+                controller: 'CrmController',
+                templateUrl: "./templates/showtable.html"
             })      
         .when("/import",
             {           
@@ -165,25 +155,8 @@
             {           
                 //controller: 'addCtrl',
                 templateUrl: "./templates/export.html"
-            });  
-        // .otherwise({redirectTo: './templates/showtable'});            
-    }]);
-
-    app.factory('dataFactory', ['$http', function($http){
-        // import csv file
-        var factory = {};       
-        // "this" equal to the runtime factory
-        factory.getCsv = function(){
-            var url='./test.csv';
-            $http.get(url).then(function(response){
-                return csvParser(response.data);
-            });     
-        };
-        // read CRM table from asiayo database
-        factory.getData = function(){
-            return $http.get("./db.php?action=get_product");            
-        };  
-        return factory; // return an object
-    }]);
+            })  
+        .otherwise({redirectTo: './showtable.html'});            
+    }]);    
    
 })();

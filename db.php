@@ -1,35 +1,35 @@
 <?php
 
-include('config.php'); 
+require_once('config.php'); 
 
 /**  Switch Case to Get Action from controller  **/
 
 switch($_GET['action'])  {
-    case 'add_product' :
-            add_product();
+    case 'add_row' :
+            add_row();
             break;
 
-    case 'get_product' :
-            get_product();
+    case 'get_data' :
+            get_data();
             break;
 
-    case 'edit_product' :
-            edit_product();
+    case 'edit_row' :
+            edit_row();
             break;
 
-    case 'delete_product' :              
-            delete_product();
+    case 'delete_row' :              
+            delete_row();
             break;
 
-    case 'update_product' :
-            update_product();
+    case 'update_row' :
+            update_row();
             break;
 }
 
 
-/**  Function to Add Product  **/
+/**  Function to Add row  **/
 
-function add_product() {
+function add_row() {
     $data = json_decode(file_get_contents("php://input")); 
     $prod_name      = $data->prod_name;    
     $prod_desc      = $data->prod_desc;
@@ -37,11 +37,11 @@ function add_product() {
     $prod_quantity  = $data->prod_quantity;
  
     print_r($data);
-    $qry = 'INSERT INTO product (prod_name,prod_desc,prod_price,prod_quantity) values ("' . $prod_name . '","' . $prod_desc . '",' .$prod_price . ','.$prod_quantity.')';
+    $qry = 'INSERT INTO crm (prod_name,prod_desc,prod_price,prod_quantity) values ("' . $prod_name . '","' . $prod_desc . '",' .$prod_price . ','.$prod_quantity.')';
    
     $qry_res = mysql_query($qry);
     if ($qry_res) {
-        $arr = array('msg' => "Product Added Successfully!!!", 'error' => '');
+        $arr = array('msg' => "row Added Successfully!!!", 'error' => '');
         $jsn = json_encode($arr);
         // print_r($jsn);
     } 
@@ -50,13 +50,13 @@ function add_product() {
         $jsn = json_encode($arr);
         // print_r($jsn);
     }
-}
+};
 
 
-/**  Function to Get Product  **/
+/**  Function to Get row  **/
 
-function get_product() {    
-    $qry = mysql_query('SELECT * from product');
+function get_data() {    
+    $qry = mysql_query('SELECT * from crm');
     $data = array();
     while($rows = mysql_fetch_array($qry))
     {
@@ -73,25 +73,25 @@ function get_product() {
 }
 
 
-/**  Function to Delete Product  **/
+/**  Function to Delete row  **/
 
-function delete_product() {
+function delete_row() {
     $data = json_decode(file_get_contents("php://input"));     
     $index = $data->prod_index;     
     //print_r($data)   ;
-    $del = mysql_query("DELETE FROM product WHERE id = ".$index);
+    $del = mysql_query("DELETE FROM crm WHERE id = ".$index);
     if($del)
     return true;
     return false;     
 }
 
 
-/**  Function to Edit Product  **/
+/**  Function to Edit row  **/
 
-function edit_product() {
+function edit_row() {
     $data = json_decode(file_get_contents("php://input"));     
     $index = $data->prod_index; 
-    $qry = mysql_query('SELECT * from product WHERE id='.$index);
+    $qry = mysql_query('SELECT * from crm WHERE id='.$index);
     $data = array();
     while($rows = mysql_fetch_array($qry))
     {
@@ -108,29 +108,29 @@ function edit_product() {
 }
 
 
-/** Function to Update Product **/
+/** Function to Update row **/
 
-function update_product() {
-    $data = json_decode(file_get_contents("php://input")); 
+function update_row(){
+
+    $data = json_decode(file_get_contents("php://input"));     
+    
     $id             =   $data->id;
     $prod_name      =   $data->prod_name;    
     $prod_desc      =   $data->prod_desc;
     $prod_price     =   $data->prod_price;
     $prod_quantity  =   $data->prod_quantity;
-   // print_r($data);
-    
-    $qry = "UPDATE product set prod_name='".$prod_name."' , prod_desc='".$prod_desc."',prod_price='.$prod_price.',prod_quantity='.$prod_quantity.' WHERE id=".$id;
-  
-    $qry_res = mysql_query($qry);
-    if ($qry_res) {
-        $arr = array('msg' => "Product Updated Successfully!!!", 'error' => '');
-        $jsn = json_encode($arr);
-        // print_r($jsn);
-    } else {
-        $arr = array('msg' => "", 'error' => 'Error In Updating record');
-        $jsn = json_encode($arr);
-        // print_r($jsn);
-    }
+
+    //print_r($data);
+ 
+    $qry = "UPDATE `crm` set `prod_name`='".$prod_name."' , `prod_desc`='".$prod_desc."',`prod_price`='".$prod_price."',`prod_quantity`='".$prod_quantity."' WHERE `id`=".$id;
+    //$qry = sprintf("UPDATE crm set prod_name=%s, $prod_name=%s, prod_desc=%s, prod_price=%d, prod_quantity=%d WHERE id=%d")  
+    //$qry = "UPDATE crm set prod_name='mark' where id=1";
+    mysql_query($qry) or die('fail to update');     
+}
+
+function __destruct(){
+    mysql_close($con);
+    return true;
 }
 
 ?>

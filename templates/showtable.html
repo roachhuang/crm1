@@ -1,39 +1,61 @@
-
-<!-- Search box -->
-	<form class='well form-search'>
-		<span class="glyphicon glyphicon-search"></span> Search <input type="text" placeholder='input keyword' class="input-medium search-query" ng-model="query"/>	
+<div>	    	
+	<br/>
+	<br/>
+	<h4>Add row</h4>
+	<form name="add_row">
+		<input type="hidden" name="prod_id" ng-model="row.prod_id">
+		<input type="text" name="prod_name" ng-model="row.prod_name" placeholder="Enter row Name">
+		<input type="text" name="prod_desc" ng-model="row.prod_desc" placeholder="Enter row Description">
+		<input type="text" name="prod_price" ng-model="row.prod_price" placeholder="Enter row Price">
+		<input type="text" name="prod_quantity" ng-model="row.prod_quantity" placeholder="Enter row Quantity">
+		<input type="button" name="submit_row" ng-show='add_prod' value="Submit" ng-click="row_submit(row)">
+		<input type="button" name="update_row" ng-show='update_prod' value="Update" ng-click="update_row(row)">
 	</form>
-	
-	<!-- display rows on page -->
-	<div class='table-responsive'> 		
-		<!-- display rows, getting from database, on page -->
-		<table class='table table-striped table-hover table-bordered'>
-			<tr>
-				<!-- table head -->
-				<th><a href="#" ng-click="sortField ='Name'; reverse = !reverse">Name</a></th>
-				<th><a href="#" ng-click="sortField ='Country'; reverse = !reverse">Country</a></th>
-				<th><a href="#" ng-click="sortField ='City'; reverse = !reverse">City</a></th>
-			</tr>
-
-			<tr ng-repeat="row in rows |filter:query | orderBy:sortField:reverse">
-				<td>
-					<div ng-hide='editingData[row.id]'>{{ row.Name }}</div>
-					<div ng-show='editingData[row.id]'><input type="text" ng-model="row.Name"/></div>
-				</td>	
-				<td>
-					<div ng-hide='editingData[row.id]'>{{ row.Country }}</div>
-					<div ng-show='editingData[row.id]'><input type="text" ng-model="row.Country"/></div>
-				</td>
-				<td>
-					<div ng-hide='editingData[row.id]'>{{ row.City }}</div>
-					<div ng-show='editingData[row.id]'><input type="text" ng-model="row.City"/></div>
-				</td>
-				<td>
-					<button type='button' class='btn btn-xs' ng-click='addRow()'><span class="glyphicon glyphicon-plus"></span>Add</button> 		 
-					<!-- <button class="btn btn-primary" ng-click="deleteRow($index)"><i class="icon-trash"></i> Delete</button> -->
-					<button type='button' class="btn btn-xs" ng-click="edit()"><span class="glyphicon glyphicon-edit"></span>{{ btnName }}</button>
-					<button type='button' class="btn btn-xs btn-danger" ng-click='deleteRow()'><span class="glyphicon glyphicon-trash"></span>Delete</button> 	
-				</td>			
-			</tr>		
-		</table>
+	<br/>		
+	<h4>Search row</h4>
+	<div class="input-append">
+		<input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search for a row">
+		<span class="add-on"><i class="icon-search"></i></span>
 	</div>
+	<br/>
+	<br/>
+	<table border=1  class="table table-striped table-condensed table-hover">
+		<thead>
+			<th>ID</th>
+			<th>row Name&nbsp;<a ng-click="sortField ='prod_name'; reverse = !reverse"><i class="icon-sort"></i></a></th>
+			<th>row Description&nbsp;<a ng-click="sortField ='prod_desc'; reverse = !reverse"><i class="icon-sort"></i></a></th>
+			<th>row Price&nbsp;<a ng-click="sortField ='prod_price'; reverse = !reverse"><i class="icon-sort"></i></a></th>
+			<th>row Quantity&nbsp;<a ng-click="sortField ='prod_quantity'; reverse = !reverse"><i class="icon-sort"></th>	 
+			<th>Action</th>     		
+		</thead>	      	
+		<tfoot>
+			<td colspan="6">
+				<div class="pagination pull-right">
+					<ul>
+						<li ng-class="{disabled: currentPage == 0}">
+							<a href ng-click="prevPage()">« Prev</a>
+						</li>
+						<li ng-repeat="n in range(pagedItems.length)"
+						ng-class="{active: n == currentPage}"
+						ng-click="setPage()">
+						<a href ng-bind="n + 1">1</a>
+					</li>
+					<li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+						<a href ng-click="nextPage()">Next »</a>
+					</li>
+				</ul>
+			</div>
+		</td>
+	</tfoot>
+	<tbody ng-init="get_row()">
+		<tr ng-repeat="row in rows | filter:query | orderBy:sortField:reverse">
+			<td>{{ row.id }}</td> 
+			<td>{{ row.prod_name | uppercase }}</td>
+			<td>{{ row.prod_desc }}</td>
+			<td>{{ row.prod_price }}</td>
+			<td>{{ row.prod_quantity }}</td>		
+			<td><a href="" ng-click="prod_edit(row.id)">Edit</a> | <a href="" ng-click="prod_delete(row.id)">Delete</a></td>
+		</tr>    
+	</tbody>
+</table>
+</div>
