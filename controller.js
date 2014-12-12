@@ -33,15 +33,22 @@
     /** function to add details for rows in mysql referecing php **/
 
     $scope.row_submit = function(row) {
-        dataFactory.submit(row)       
-        .success(function (data, status, headers, config) {
-          $scope.get_row(); 
-        })
-        .error(function(data, status, headers, config){
-           console.log('fail to add a row')
-        });
+        if (confirm("Are you sure to add the row?") === true){
+            dataFactory.submit(row)       
+            .success(function (data, status, headers, config) {
+            $scope.get_row(); 
+            })
+            .error(function(data, status, headers, config){
+            console.log('fail to add a row')
+            });
+        }    
+        $scope.row =[];     // clear inputbox
     };
 
+    $scope.cancel = function(){
+        $scope.row =[];
+        $scope.showAddBtn = true;
+    }
     /** function to delete row from list of row referencing php **/
 
     $scope.prod_delete = function(index) {  
@@ -93,16 +100,17 @@
                         console.log('bad');
                     });
         */
-        $scope.showAddBtn=true;
-        dataFactory.updateRow(row)
-            .success(function (data, status, headers, config) {
-                  $scope.get_row(); // callback when success
-                })
-            .error(function(data, status, headers, config){
-                console.log('what the fuck');
-                   
-            });        
-            
+        if (confirm("Are you sure to update the row?") === true){
+            $scope.showAddBtn=true;
+            dataFactory.updateRow(row)
+                .success(function (data, status, headers, config) {
+                      $scope.get_row(); // callback when success
+                    })
+                .error(function(data, status, headers, config){
+                    console.log('what the fuck');                   
+                });       
+        }        
+        $scope.row=[];
     };
 
     /** function to call prvious page , click on paging items button previous for row list **/

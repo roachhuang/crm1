@@ -3,21 +3,23 @@
 	<br/>
 	<h4>Add row</h4>
 	
-	<form name="add_row">
+	<form calss='form-inline' role='form'name="add_row">
 		<input type="hidden" name="prod_id" ng-model="row.prod_id">
 		<input type="text" name="prod_name" ng-model="row.prod_name" placeholder="Enter row Name">
 		<input type="text" name="prod_desc" ng-model="row.prod_desc" placeholder="Enter row Description">
 		<input type="text" name="prod_price" ng-model="row.prod_price" placeholder="Enter row Price">
 		<input type="text" name="prod_quantity" ng-model="row.prod_quantity" placeholder="Enter row Quantity">
-		<input type="button" name="submit_row" ng-show='showAddBtn' value="Submit" ng-click="row_submit(row)">
-		<input type="button" name="update_row" ng-hide='showAddBtn' value="Update" ng-click="update_row(row)">
+		<button class='btn btn-primary' aria-label="Left Align" ng-show='showAddBtn' ng-click="row_submit(row)"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+		<button class='btn btn-info' aria-label="Left Align" ng-hide='showAddBtn' ng-click="update_row(row)"><span class="glyphicon glyphicon-retweet"></span> Update</button>
+		<button class='btn btn-warning' ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>	
+		</form>	
 	</form>
 
 	<br/>		
 	<h4>Search row</h4>
 	<div class="input-append">
 		<input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search for a row">
-		<span class="add-on"><i class="icon-search"></i></span>
+		<span class="glyphicon glyphicon-search"></span>
 	</div>
 	<br/>
 	<br/>
@@ -56,7 +58,13 @@
 			<td>{{ row.prod_desc }}</td>
 			<td>{{ row.prod_price }}</td>
 			<td>{{ row.prod_quantity }}</td>		
-			<td><a href="" ng-click="prod_edit(row.id)">Edit</a> | <a href="" ng-click="prod_delete(row.id)">Delete</a></td>
+			<td>
+			<button type='button' class="btn btn-xs btn-success" ng-click="prod_edit(row.id)"><span class="glyphicon glyphicon-pencil"></span> Edit&nbsp;&nbsp;&nbsp;</button>
+			<button type='button' class="btn btn-xs btn-danger" ng-click='prod_delete(row.id)'><span class="glyphicon glyphicon-trash"></span> Delete</button> 
+			<!--
+			<a href="" ng-click="prod_edit(row.id)">Edit</a> | <a href="" ng-click="prod_delete(row.id)">Delete</a>
+			-->
+			</td>
 		</tr>    
 	</tbody>
 </table>
