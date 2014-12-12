@@ -1,5 +1,5 @@
 (function(){    
-    var app = angular.module('crmApp', ['ngRoute', 'ngCsv', 'MyFactory']);    
+    var app = angular.module('crmApp', ['ngRoute', 'ngCsv', 'myFactory']);    
 
     /* variable app is  a variable which used to control the array values to show the data to show in view  using the module name 'app' with arguments as an array */
 
@@ -7,11 +7,12 @@
 
     /* $scope argument passed in function is a key arguments should be passed with exactly the same name */
 
-    app.controller('CrmController', ['$scope', '$http', 'dataFactory', function($scope, $http, dataFactory) {
+    app.controller('CrmController', ['$scope', '$http', 'dataFactory', 'sharing', function($scope, $http, dataFactory, sharing) {
     $scope.filteredItems =  [];
     $scope.groupedItems  =  [];
     $scope.itemsPerPage  =  3;
-    $scope.rows =  [];
+    $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
+    //$scope.rows =  []];
     $scope.row = [];
     $scope.currentPage   =  0;
     $scope.reverse = false;
@@ -23,7 +24,8 @@
     $scope.get_row = function() {
         dataFactory.getData()
             .success(function(data){
-                $scope.rows=data;              
+                //$scope.rows=data;  
+                $scope.data.sharingRows=data;             
             })
             .error(function(error){
                 console.log('faile to read from db' + error.message);
@@ -151,26 +153,31 @@
     };
 
     $scope.import = function(){
-        $scope.rows = dataFactory.importCsv();
+        //$scope.rows = dataFactory.importCsv();
     }
 
     }]); // end of Crmcontroller
+
+
+    app.controller('ExportCtrl', function($scope, sharing){
+        $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
+    })
 
     app.config(['$routeProvider', function($routeProvider){     
         $routeProvider.
         when("/showtable",
             {           
-                //controller: 'CrmController',
+                controller: 'CrmController',
                 templateUrl: "./templates/showtable.html"
             })      
         .when("/import",
             {           
                 //controller: 'addCtrl',
-                templateUrl: "./templates/import.html"
+                //templateUrl: "./templates/import.html"
             })  
         .when("/export",
             {           
-                //controller: 'CrmController',
+                controller: 'ExportCtrl',
                 templateUrl: "./templates/export.html"
             })  
         .otherwise({redirectTo: './showtable.html'});            

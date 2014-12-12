@@ -52,7 +52,7 @@
 		</td>
 	</tfoot>
 	<tbody ng-init="get_row()">
-		<tr ng-repeat="row in rows | filter:query | orderBy:sortField:reverse">
+		<tr ng-repeat="row in data.sharingRows | filter:query | orderBy:sortField:reverse">
 			<td>{{ row.id }}</td> 
 			<td>{{ row.prod_name | uppercase }}</td>
 			<td>{{ row.prod_desc }}</td>
@@ -68,5 +68,5 @@
 		</tr> 		  
 	</tbody>	
 </table>
-<h1>{{rows.length}} </h1>
+<h1>{{data.sharingRows.length}} </h1>
 </div>
