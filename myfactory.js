@@ -45,7 +45,13 @@
                 prod_quantity: row.prod_quantity
                 }
             );
-        };                
+        }; 
+
+        factory.importCsv = function(path){
+            var Url = path;
+            $http.get(Url).then(function(response){
+            return csvParser(response.data);
+        };               
 
         return factory; // return an object
     }]);

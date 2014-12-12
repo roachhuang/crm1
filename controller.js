@@ -150,13 +150,17 @@
         return ret;
     };
 
+    $scope.import = function(){
+        $scope.rows = dataFactory.importCsv();
+    }
+
     }]); // end of Crmcontroller
 
     app.config(['$routeProvider', function($routeProvider){     
         $routeProvider.
         when("/showtable",
             {           
-                controller: 'CrmController',
+                //controller: 'CrmController',
                 templateUrl: "./templates/showtable.html"
             })      
         .when("/import",
@@ -166,7 +170,7 @@
             })  
         .when("/export",
             {           
-                //controller: 'addCtrl',
+                //controller: 'CrmController',
                 templateUrl: "./templates/export.html"
             })  
         .otherwise({redirectTo: './showtable.html'});            

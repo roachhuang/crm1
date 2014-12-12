@@ -3,7 +3,7 @@
 require_once('config.php'); 
 
 /**  Switch Case to Get Action from controller  **/
-
+// CRUD
 switch($_GET['action'])  {
     case 'add_row' :
             add_row();
@@ -25,7 +25,6 @@ switch($_GET['action'])  {
             update_row();
             break;
 }
-
 
 /**  Function to Add row  **/
 
