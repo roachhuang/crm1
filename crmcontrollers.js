@@ -1,13 +1,7 @@
-(function(){    
-    var app = angular.module('crmApp', ['ngRoute', 'ngCsv', 'myFactory']);    
+(function(){
+	var app = angular.module('crmControllers', ['ngCsv']);
 
-    /* variable app is  a variable which used to control the array values to show the data to show in view  using the module name 'app' with arguments as an array */
-
-    /* Initialize the controller by name 'PhoneListCtrl' holds the information of phone in form of array with keys name, snipper, price , quantity */
-
-    /* $scope argument passed in function is a key arguments should be passed with exactly the same name */
-
-    app.controller('CrmController', ['$scope', '$http', 'dataFactory', 'sharing', function($scope, $http, dataFactory, sharing) {
+	app.controller('tblCtrl', ['$scope', '$http', 'dataFactory', 'sharing', function($scope, $http, dataFactory, sharing) {
     $scope.filteredItems =  [];
     $scope.groupedItems  =  [];
     $scope.itemsPerPage  =  3;
@@ -162,25 +156,4 @@
     app.controller('ExportCtrl', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
     })
-
-    app.config(['$routeProvider', function($routeProvider){     
-        $routeProvider.
-        when("/showtable",
-            {           
-                controller: 'CrmController',
-                templateUrl: "./templates/showtable.html"
-            })      
-        .when("/import",
-            {           
-                //controller: 'addCtrl',
-                //templateUrl: "./templates/import.html"
-            })  
-        .when("/export",
-            {           
-                controller: 'ExportCtrl',
-                templateUrl: "./templates/export.html"
-            })  
-        .otherwise({redirectTo: './showtable.html'});            
-    }]);    
-   
 })();
