@@ -5,8 +5,8 @@
         // import csv file
         var factory = {};       
         // "this" equal to the runtime factory
-        factory.getCsv = function(){
-            var url='./test.csv';
+        factory.getCsv = function(path){
+            var url=path;
             $http.get(url).then(function(response){
                 return csvParser(response.data);
             });     
@@ -50,3 +50,15 @@
         return factory; // return an object
     }]);
 })();
+
+/* to be move to app.js for animation*/
+app.run(function ($rootScope) {
+  $rootScope.$on('$routeChangeSuccess', function(e, current, previous) {
+    var direction = current && previous && current.depth < previous.depth;
+
+    $rootScope.viewSlideAnimation = {
+      enter: direction ? 'slide-left-enter' : 'slide-right-enter',
+      leave: direction ? 'slide-right-leave' : 'slide-left-leave'
+    }
+  });
+});
