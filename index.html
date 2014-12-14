@@ -35,10 +35,19 @@
 		<li><a href='#showtable'><span class="glyphicon glyphicon-list"> Table</span></a></li>	
 		<li><a href='#import'><span class="glyphicon glyphicon-import"> Import</span></a></li>
 		<li><a href='#export'><span class="glyphicon glyphicon-export"> Export</span></a></li>		
-	</ul>
-	</header>	
+	</ul>	
+	</header>
+	<h3>Select a csv file</h3>
+	<input type="file" id='myFile' 'ng-model="uploadFile" />
+	{{ uploadFile.path }}
 	<!-- place holder for views -->
 	<!-- <div ng-view ng-animate="viewSlideAnimation"></div> -->
 	<div ng-view"></div>
+	<script>
+	function myFunction() {
+		var x = document.getElementById("myFile").value;
+		document.getElementById("demo").innerHTML = x;
+	}
+	</script>
 </body>
 </html>

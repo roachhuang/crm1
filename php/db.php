@@ -29,6 +29,7 @@ switch($_GET['action'])  {
 /**  Function to Add row  **/
 
 function add_row() {
+	// _GET_POST
     $data = json_decode(file_get_contents("php://input")); 
     $prod_name      = $data->prod_name;    
     $prod_desc      = $data->prod_desc;
@@ -38,8 +39,7 @@ function add_row() {
     print_r($data);
     $qry = 'INSERT INTO crm (prod_name,prod_desc,prod_price,prod_quantity) values ("' . $prod_name . '","' . $prod_desc . '",' .$prod_price . ','.$prod_quantity.')';
    
-    mysql_query($qry) or die('fail to add in db.php');
-    
+    mysql_query($qry) or die('fail to add in db.php');    
 };
 
 

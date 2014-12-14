@@ -32,10 +32,10 @@
         if (confirm("Are you sure to add the row?") === true){
             dataFactory.submit(row)       
             .success(function (data, status, headers, config) {
-            $scope.get_row(); 
+				$scope.get_row(); 
             })
             .error(function(data, status, headers, config){
-            console.log('fail to add a row')
+				console.log('fail to add a row')
             });
         }    
         $scope.row =[];     // clear inputbox
@@ -151,6 +151,13 @@
     // import controller  
     app.controller('importCtrl', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
+		$scope.import = function(){
+			// get the file's full path after the user click on the import btn
+			var path = document.getElementById("myFile").value;
+			data.sharingRows = dataFactory.importCsv(path);	
+			// call factory to do database selection and save to db
+			// then user can click on table menu to show the update.
+		};	
      });   
     
     // export controller
