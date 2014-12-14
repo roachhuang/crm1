@@ -1,6 +1,6 @@
 <?php
 
-require_once('config.php'); 
+require_once('./config.php'); 
 
 /**  Switch Case to Get Action from controller  **/
 // CRUD

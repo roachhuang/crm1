@@ -17,7 +17,7 @@
         .when("/import",
             {           
                 controller: 'importCtrl',
-                //templateUrl: "./templates/import.html"
+                templateUrl: "./templates/import.html"
             })  
         .when("/export",
             {           
@@ -26,7 +26,9 @@
             })  
         .otherwise({redirectTo: './showtable.html'});            
     }]);    
-   
+
+    /* to be move to app.js for animation*/
+    /*
     app.run(function ($rootScope) {
       $rootScope.$on('$routeChangeSuccess', function(e, current, previous) {
         var direction = current && previous && current.depth < previous.depth;
@@ -37,5 +39,5 @@
         }
       });
     });
-
+    */
 })();

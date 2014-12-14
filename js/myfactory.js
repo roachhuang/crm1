@@ -17,19 +17,19 @@
         };
         // read CRM table from asiayo database
         factory.getData = function(){
-            return $http.get("./db.php?action=get_data");            
+            return $http.get("./php/db.php?action=get_data");            
         };
 
         factory.deleteRow = function(index){
-            return $http.post('./db.php?action=delete_row', {'prod_index': index });
+            return $http.post('./php/db.php?action=delete_row', {'prod_index': index });
         };
 
         factory.editRow = function(index){
-            return $http.post('./db.php?action=edit_row', {'prod_index': index});      
+            return $http.post('./php/db.php?action=edit_row', {'prod_index': index});      
         };
 
         factory.updateRow = function(row){   
-            return $http.post('./db.php?action=update_row', 
+            return $http.post('./php/db.php?action=update_row', 
                     {
                      id: row.prod_id,
                      prod_name: row.prod_name,
@@ -41,7 +41,7 @@
         };  
 
         factory.submit = function(row){
-            return $http.post('db.php?action=add_row', 
+            return $http.post('./php/db.php?action=add_row', 
                 {
                 prod_name: row.prod_name,
                 prod_desc: row.prod_desc, 
@@ -62,3 +62,4 @@
         return factory; // return an object
     }]);
 })();
+

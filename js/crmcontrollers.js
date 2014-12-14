@@ -144,36 +144,17 @@
             ret.push(i);
         }
         return ret;
-    };
-
-    $scope.import = function(){
-        //$scope.rows = dataFactory.importCsv();      
-
-    }
+    };  
 
     }]); // end of Crmcontroller
 
-    // import controller
-    app.controller('importCtrl', function($scope, $rootScope, uploadManager, sharing){
+    // import controller  
+    app.controller('importCtrl', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-        $scope.files = [];
-        $scope.percentage = 0;
-        $scope.upload = function () {
-            uploadManager.upload();
-            $scope.files = [];
-        };
-        $rootScope.$on('fileAdded', function (e, call) {
-            $scope.files.push(call);
-            $scope.$apply();
-        });
-        $rootScope.$on('uploadProgress', function (e, call) {
-        $scope.percentage = call;
-        $scope.$apply();
-    });
+     });   
     
     // export controller
     app.controller('exportCtrl', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
     });
-    
 })();
