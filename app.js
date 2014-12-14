@@ -16,12 +16,12 @@
             })      
         .when("/import",
             {           
-                //controller: 'addCtrl',
+                controller: 'importCtrl',
                 //templateUrl: "./templates/import.html"
             })  
         .when("/export",
             {           
-                controller: 'ExportCtrl',
+                controller: 'exportCtrl',
                 templateUrl: "./templates/export.html"
             })  
         .otherwise({redirectTo: './showtable.html'});            
