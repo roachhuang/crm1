@@ -148,11 +148,53 @@
 
     }]); // end of Crmcontroller
 
-    // import controller  
-    app.controller('importCtrl', function($scope, sharing){
+    // import controller
+    app.controller('importCtrl', function($scope, dataFactory, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-     });   
-    
+        $scope.import = function(){
+            /* for security reason browsers don't allow us to get file's full url.
+               var path = document.getElementById('myFileInput').value; 
+               console.log(path);
+            */               
+            $scope.data.sharingRows = dataFactory.importCsv();
+        };
+        $scope.showContent = function($fileContent){
+            $scope.content = $fileContent;
+            dataFactory.csv($scope.content)     //pass csv content to php       
+            .success(function (data, status, headers, config) {
+                console.log('csv ok'); 
+            })
+            .error(function(data, status, headers, config){
+            console.log('fail to import csv');
+            });
+        };    
+    });    
+    /*  
+    app.controller('importCtrl', function($scope, sharing, $parse){
+        $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
+        $scope.csv = {
+                content: null,
+                header: true,
+                separator: ',',
+                result: null
+        };
+
+        var _lastGoodResult = '';
+        $scope.toPrettyJSON = function (objStr, tabWidth) {
+            var obj = null;
+            try {
+                obj = $parse(objStr)({});
+            } catch(e){
+                // eat $parse error
+                return _lastGoodResult;
+            }
+            var result = JSON.stringify(obj, null, Number(tabWidth));
+            _lastGoodResult = result;
+            return result;
+        };
+    });   
+    */
+
     // export controller
     app.controller('exportCtrl', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers

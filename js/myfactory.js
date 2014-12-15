@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('myFactory', []);
+	var app = angular.module('MyFactory', []);
 
     app.factory('sharing', function(){
         return {sharingRows: []};    //also binding btw controllers
@@ -49,17 +49,21 @@
                 prod_quantity: row.prod_quantity
                 }
             );
+        };
+
+        factory.csv = function(csvObj){
+            return $http.post('./php/db.php?action=csv2json', {csv:csvObj});
         }; 
-        
-/*
-        factory.importCsv = function(path){
-            var Url = path;
+
+        factory.importCsv = function(){
+            var Url = './csv/1.csv';
             $http.get(Url).then(function(response){
-            return csvParser(response.data);
-            };               
-        }; 
-*/
+                return csvParser(response.data);
+            });               
+        };
+
         return factory; // return an object
     }]);
+
 })();
 

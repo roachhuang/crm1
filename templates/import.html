@@ -1,9 +1,18 @@
 
-<ng-csv-import content="csv.content"
-    header="true" 
-    separator=","
-    result="csv.result">
-</ng-csv-import>
+<div>
+  <h2>Select a csv file</h2>
+    <input type="file" on-read-file="showContent($fileContent)" />
+    <div ng-if="content">
+        <h2>File content is:</h2>
+        
+    </div>
+</div>
 
-{{ csv.result }}
-
+<!-- 
+****
+<form class='form'>
+<input type="file" ng-model="uploadFile" id='myFileInput'/>
+<button class='btn btn-primary' ng-click="import()"><span class="glyphicon glyphicon-import"></span> Import</button>
+</form>
+{{ uploadFile }}
+-->

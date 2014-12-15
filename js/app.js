@@ -1,5 +1,5 @@
 (function(){    
-    var app = angular.module('crmApp', ['ngRoute', 'crmControllers', 'myFactory', 'ngResource', 'ngCsvImport']);    
+    var app = angular.module('crmApp', ['ngRoute', 'crmControllers', 'MyFactory', 'MyDirectives']);    
 
     /* variable app is  a variable which used to control the array values to show the data to show in view  using the module name 'app' with arguments as an array */
 
