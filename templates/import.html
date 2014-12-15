@@ -1,4 +1,35 @@
-
+<?php
+include "Quick_CSV_import.php"; // Have you class seperate from your working code.
+ 
+//connect to database
+mysql_connect("localhost", "root", "1");
+mysql_select_db("test"); //your database
+ 
+$csv = new Quick_CSV_import();
+ 
+$arr_encodings = $csv->get_encodings(); //take possible encodings list
+$arr_encodings["default"] = "[default database encoding]"; //set a default (when the default database encoding should be used)
+ 
+if(!isset($_POST["encoding"]))
+  $_POST["encoding"] = "default"; //set default encoding for the first page show (no POST vars)
+ 
+if(isset($_POST["Go"]) && ""!=$_POST["Go"]) //form was submitted
+{
+  $csv->file_name = $HTTP_POST_FILES['file_source']['tmp_name'];
+  
+  //optional parameters
+  $csv->use_csv_header = isset($_POST["use_csv_header"]);
+  $csv->field_separate_char = $_POST["field_separate_char"][0];
+  $csv->field_enclose_char = $_POST["field_enclose_char"][0];
+  $csv->field_escape_char = $_POST["field_escape_char"][0];
+  $csv->encoding = $_POST["encoding"];
+  
+  //start import now
+  $csv->import();
+}
+else
+  $_POST["use_csv_header"] = 1;
+?>
 <div>
   <h2>Select a csv file</h2>
     <input type="file" on-read-file="showContent($fileContent)" />
@@ -16,3 +47,48 @@
 </form>
 {{ uploadFile }}
 -->
+<form method="post" enctype="multipart/form-data">
+    <table border="0" align="center">
+      <tr>
+          <td>Source CSV file to import:</td>
+          <td rowspan="30" width="10px">&nbsp;</td>
+          <td><input type="file" name="file_source" id="file_source" class="edt" value="<?=$file_source?>"></td>
+      </tr>
+      <tr>
+          <td>Use CSV header:</td>
+          <td><input type="checkbox" name="use_csv_header" id="use_csv_header" <?=(isset($_POST["use_csv_header"])?"checked":"")?>/></td>
+      </tr>
+      <tr>
+          <td>Separate char:</td>
+          <td><input type="text" name="field_separate_char" id="field_separate_char" class="edt_30"  maxlength="1" value="<?=(""!=$_POST["field_separate_char"] ? htmlspecialchars($_POST["field_separate_char"]) : ",")?>"/></td>
+      </tr>
+      <tr>
+          <td>Enclose char:</td>
+          <td><input type="text" name="field_enclose_char" id="field_enclose_char" class="edt_30"  maxlength="1" value="<?=(""!=$_POST["field_enclose_char"] ? htmlspecialchars($_POST["field_enclose_char"]) : htmlspecialchars("\""))?>"/></td>
+      </tr>
+      <tr>
+          <td>Escape char:</td>
+          <td><input type="text" name="field_escape_char" id="field_escape_char" class="edt_30"  maxlength="1" value="<?=(""!=$_POST["field_escape_char"] ? htmlspecialchars($_POST["field_escape_char"]) : "\\")?>"/></td>
+      </tr>
+      <tr>
+          <td>Encoding:</td>
+          <td>
+          <select name="encoding" id="encoding" class="edt">
+          <?
+            if(!empty($arr_encodings))
+              foreach($arr_encodings as $charset=>$description):
+          ?>
+            <option value="<?=$charset?>"<?=($charset == $_POST["encoding"] ? "selected=\"selected\"" : "")?>><?=$description?></option>
+          <? endforeach;?>
+          </select>
+        </td>
+      </tr>
+      <tr>
+          <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+          <td colspan="3" align="center"><input type="Submit" name="Go" value="Import it" onclick=" var s = document.getElementById('file_source'); if(null != s && '' == s.value) {alert('Define file name'); s.focus(); return false;}"></td>
+      </tr>
+    </table>
+  </form>
+<?=(!empty($csv->error) ? "<hr/>Errors: ".$csv->error : "")?>
