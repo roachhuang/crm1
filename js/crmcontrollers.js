@@ -60,10 +60,10 @@
     /** fucntion to edit row details from list of row referencing php **/
 
     $scope.prod_edit = function(index) {
-        $scope.showAddBtn = false;  
-      //$scope.update_prod = true;
-      //$scope.add_prod = false;
-      dataFactory.editRow(index)     
+       $scope.showAddBtn = false;  
+        //$scope.update_prod = true;
+        //$scope.add_prod = false;
+        dataFactory.editRow(index)     
         .success(function (data, status, headers, config) {    
             //alert(data[0]["prod_name"]);
             // 2-way data binding
@@ -71,10 +71,10 @@
             $scope.row.prod_name        =   data[0]["prod_name"];
             $scope.row.prod_desc        =   data[0]["prod_desc"];
             $scope.row.prod_price       =   data[0]["prod_price"];
-            $scope.row.prod_quantity    =   data[0]["prod_quantity"];
+            $scope.row.prod_quantity    =   data[0]["prod_quantity"];           
         })
         .error(function(data, status, headers, config){ 
-
+            console.log('edit error');
         });
     };
 
@@ -152,17 +152,24 @@
     app.controller('importCtrl', function($scope, dataFactory, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
         $scope.import = function(){
-            /* for security reason browsers don't allow us to get file's full url.
-               var path = document.getElementById('myFileInput').value; 
+            /* for security reason browsers don't allow us to get file's full url.*/ 
+            console.log($scope.uploadme);
+               path = document.getElementById('myFileInput').value; 
                console.log(path);
-            */               
-            $scope.data.sharingRows = dataFactory.importCsv();
+        dataFactory.csv("f:\download\test.csv")     //pass csv content to php       
+            .success(function (data, status, headers, config) {
+               console.log(data); 
+            })
+            .error(function(data, status, headers, config){
+                console.log('fail to import csv');
+            });              
+            //$scope.data.sharingRows = dataFactory.importCsv();
         };
         $scope.showContent = function($fileContent){
             $scope.content = $fileContent;
             dataFactory.csv($scope.content)     //pass csv content to php       
             .success(function (data, status, headers, config) {
-                console.log('csv ok'); 
+                console.log(data); 
             })
             .error(function(data, status, headers, config){
             console.log('fail to import csv');

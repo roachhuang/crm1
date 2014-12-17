@@ -52,7 +52,8 @@
         };
 
         factory.csv = function(csvObj){
-            return $http.post('./php/db.php?action=csv2json', {csv:csvObj});
+            cols =['f1', 'f2', 'f3', 'f4', 'f5'];
+            return $http.post('./php/db.php?action=csv2json', {table:'temp', field: cols});
         }; 
 
         factory.importCsv = function(){

@@ -24,6 +24,11 @@
                 controller: 'exportCtrl',
                 templateUrl: "./templates/export.html"
             })  
+        .when("/home",
+            {           
+                //controller: 'exportCtrl',
+                templateUrl: "./templates/home.html"
+            })  
         .otherwise({redirectTo: './showtable.html'});            
     }]);    
 

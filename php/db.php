@@ -4,7 +4,7 @@ require_once('./config.php');
 
 /**  Switch Case to Get Action from controller  **/
 // CRUD
-switch($_GET['action'])  {
+switch($_GET['action']){
     case 'add_row' :
             add_row();
             break;
@@ -23,6 +23,10 @@ switch($_GET['action'])  {
 
     case 'update_row' :
             update_row();
+            break;
+
+    case 'csv2json' :
+            csv2json();
             break;
 }
 
@@ -93,7 +97,7 @@ function edit_row() {
                     "prod_quantity" =>  $rows['prod_quantity']
                     );
     }
-    print_r(json_encode($data));
+    //print_r(json_encode($data));
     return json_encode($data);  
 }
 
@@ -101,7 +105,6 @@ function edit_row() {
 /** Function to Update row **/
 
 function update_row(){
-
     $data = json_decode(file_get_contents("php://input"));     
     
     $id             =   $data->id;
@@ -117,22 +120,27 @@ function update_row(){
     //$qry = "UPDATE crm set prod_name='mark' where id=1";
     mysql_query($qry) or die('fail to update in db.php');     
 }
-
-Function cvs2jason(){
+/*
+function csv2json(){
     $csvData = json_decode(file_get_contents("php://input"));  
     $array = array_map('str_getcsv', explode('\n', $csvData));
-    print json_encode($array);
+    return $array;
+    //print json_encode($array);
 }
+*/
 //Import the contents of a CSV file after uploading it
 //Example: CSVImport("User", array('name','username','email','url'), "csv_file");
 //Aruguments : $table - The name of the table the data must be imported to
 //                $fields - An array of fields that will be used
 //                $csv_fieldname - The name of the CSV file field
-Function CSVImport($table, $fields, $csv_fieldname='csv') {
-    if(!$_FILES[$csv_fieldname]['name']) return;
+function csv2json() {
+    $data = json_decode(file_get_contents("php://input"));  
+    $table      = $data->table;    
+    $field      = $data->field;
+    
+    //if(!$_FILES[$csv_fieldname]['name']) return;
 
-    $handle = fopen($_FILES[$csv_fieldname]['tmp_name'],'r');
-    if(!$handle) die('Cannot open uploaded file.');
+    $handle = fopen("test.csv", "r");
 
     $row_count = 0;
     $sql_query = "INSERT INTO $table(". implode(',',$fields) .") VALUES(";
@@ -176,17 +184,17 @@ function writeToMysql(){
 */
 // csv import
 class Quick_CSV_import{
-  var $table_name; //where to import to
-  var $file_name;  //where to import from
-  var $use_csv_header; //use first line of file OR generated columns names
-  var $field_separate_char; //character to separate fields
-  var $field_enclose_char; //character to enclose fields, which contain separator char into content
-  var $field_escape_char;  //char to escape special symbols
-  var $error; //error message
-  var $arr_csv_columns; //array of columns
-  var $table_exists; //flag: does table for import exist
-  var $encoding; //encoding table, used to parse the incoming file. Added in 1.5 version
-  
+    var $table_name; //where to import to
+    var $file_name;  //where to import from
+    var $use_csv_header; //use first line of file OR generated columns names
+    var $field_separate_char; //character to separate fields
+    var $field_enclose_char; //character to enclose fields, which contain separator char into content
+    var $field_escape_char;  //char to escape special symbols
+    var $error; //error message
+    var $arr_csv_columns; //array of columns
+    var $table_exists; //flag: does table for import exist
+    var $encoding; //encoding table, used to parse the incoming file. Added in 1.5 version
+      
   function Quick_CSV_import($file_name=""){
 	$this->file_name = $file_name;
 	$this->arr_csv_columns = array();
