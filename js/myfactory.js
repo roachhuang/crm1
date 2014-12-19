@@ -7,14 +7,8 @@
 
 	app.factory('dataFactory', ['$http', function($http){
         // import csv file
-        var factory = {};       
-        // "this" equal to the runtime factory
-        factory.getCsv = function(path){
-            var url=path;
-            $http.get(url).then(function(response){
-                return csvParser(response.data);
-            });     
-        };
+        var factory = {};   
+        
         // read CRM table from asiayo database
         factory.getData = function(){
             return $http.get("./php/db.php?action=get_data");            
@@ -51,16 +45,10 @@
             );
         };
 
-        factory.csv = function(csvObj){
-            cols =['f1', 'f2', 'f3', 'f4', 'f5'];
-            return $http.post('./php/db.php?action=csv2json', {table:'temp', field: cols});
-        }; 
-
         factory.importCsv = function(){
-            var Url = './csv/1.csv';
-            $http.get(Url).then(function(response){
-                return csvParser(response.data);
-            });               
+            console.log('called factory.importcsv');
+            var fileToUpload = '../test.csv';   // relative to db.php's path
+            return $http.post('./php/db.php?action=importCsv', {filename: fileToUpload});               
         };
 
         return factory; // return an object

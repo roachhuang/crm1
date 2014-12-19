@@ -14,7 +14,7 @@
 -->
 
 <form class='form'>
-<input type="file" id='myFileInput'/>
-<button class='btn btn-primary' ng-click="import()"><span class="glyphicon glyphicon-import"></span> Import</button>
+	<label>Select csv file to upload:
+	<input type="file" name='filetoUpload' id='fileToUpload'/></label>
+	<button class='btn btn-primary' ng-click="importCsv()"><span class="glyphicon glyphicon-import"></span> Import</button>
 </form>
-{{ uploadme }}

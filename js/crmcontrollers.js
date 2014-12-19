@@ -151,20 +151,23 @@
     // import controller
     app.controller('importCtrl', function($scope, dataFactory, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-        $scope.import = function(){
+        $scope.importCsv = function(cvsfilename){
             /* for security reason browsers don't allow us to get file's full url.*/ 
-            console.log($scope.uploadme);
-               path = document.getElementById('myFileInput').value; 
-               console.log(path);
-        dataFactory.csv("f:\download\test.csv")     //pass csv content to php       
+            //console.log($scope.uploadme);
+            //path = document.getElementById('myFileInput').value; 
+            //$csv = csvfilename;
+            console.log('$csv');
+
+            dataFactory.importCsv()     //pass csv content to php       
             .success(function (data, status, headers, config) {
-               console.log(data); 
+                console.log(data); 
             })
             .error(function(data, status, headers, config){
                 console.log('fail to import csv');
             });              
             //$scope.data.sharingRows = dataFactory.importCsv();
         };
+
         $scope.showContent = function($fileContent){
             $scope.content = $fileContent;
             dataFactory.csv($scope.content)     //pass csv content to php       
