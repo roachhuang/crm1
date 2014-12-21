@@ -7,6 +7,7 @@
     $scope.itemsPerPage  =  3;
     $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
     //$scope.rows =  []];
+    $scope.actionForBox = 'Add a row';
     $scope.row = [];
     $scope.currentPage   =  0;
     $scope.reverse = false;
@@ -28,7 +29,7 @@
 
     /** function to add details for rows in mysql referecing php **/
 
-    $scope.row_submit = function(row) {
+    $scope.add_row = function(row) {
         if (confirm("Are you sure to add the row?") === true){
             dataFactory.submit(row)       
             .success(function (data, status, headers, config) {
@@ -44,37 +45,41 @@
     $scope.cancel = function(){
         $scope.row =[];
         $scope.showAddBtn = true;
+        $scope.actionForBox = 'Add a row';
     }
     /** function to delete row from list of row referencing php **/
 
-    $scope.prod_delete = function(index) {  
-        dataFactory.deleteRow(index)      
-            .success(function (data, status, headers, config) {    
-               $scope.get_row();
-        })
-        .error(function(data, status, headers, config){
-           
-        });
+    $scope.delete_row = function(index) { 
+        if (confirm("Are you sure to delete the row?") === true){ 
+            dataFactory.deleteRow(index)      
+                .success(function (data, status, headers, config) {    
+                   $scope.get_row();
+            })
+            .error(function(data, status, headers, config){
+               
+            });
+        }    
     };
 
     /** fucntion to edit row details from list of row referencing php **/
 
-    $scope.prod_edit = function(index) {
-       $scope.showAddBtn = false;  
+    $scope.edit_row = function(index) {
+       $scope.showAddBtn = false;
+       $scope.actionForBox = 'Edit the row';  
         //$scope.update_prod = true;
         //$scope.add_prod = false;
         dataFactory.editRow(index)     
-        .success(function (data, status, headers, config) {    
+        .success(function (data) {    
             //alert(data[0]["prod_name"]);
             // 2-way data binding
-            $scope.row.prod_id          =   data[0]["id"];
-            $scope.row.prod_name        =   data[0]["prod_name"];
-            $scope.row.prod_desc        =   data[0]["prod_desc"];
-            $scope.row.prod_price       =   data[0]["prod_price"];
-            $scope.row.prod_quantity    =   data[0]["prod_quantity"];           
+            $scope.row.prod_id          =   data[0];
+            $scope.row.prod_name        =   data[1];
+            $scope.row.prod_desc        =   data[2];
+            $scope.row.prod_price       =   data[3];
+            $scope.row.prod_quantity    =   data[4];           
         })
         .error(function(data, status, headers, config){ 
-            console.log('edit error');
+            console.log('fail to edit row');
         });
     };
 
@@ -98,6 +103,7 @@
         */
         if (confirm("Are you sure to update the row?") === true){
             $scope.showAddBtn=true;
+            $scope.actionForBox = 'Add a row';
             dataFactory.updateRow(row)
                 .success(function (data, status, headers, config) {
                       $scope.get_row(); // callback when success

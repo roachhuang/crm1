@@ -43,14 +43,14 @@ function add_row() {
     // print_r($data);
     $qry = 'INSERT INTO crm (prod_name,prod_desc,prod_price,prod_quantity) values ("' . $prod_name . '","' . $prod_desc . '",' .$prod_price . ','.$prod_quantity.')';
    
-    mysql_query($qry) or die('fail to add in db.php');    
+    mysql_query($qry) or die('error adding row');    
 };
 
 
 /**  Function to Get row  **/
 
 function get_data() {    
-    $qry = mysql_query('SELECT * from crm');
+    $qry = mysql_query('SELECT * from crm') or die('error getting data');
     $data = array();
     while($rows = mysql_fetch_array($qry))
     {
@@ -62,6 +62,7 @@ function get_data() {
                     "prod_quantity" => $rows['prod_quantity']
                     );
     }
+    // don't know why print_r is a must. otherwise won't work
     print_r(json_encode($data));
     return json_encode($data);  
 }
@@ -73,8 +74,8 @@ function delete_row() {
     $data = json_decode(file_get_contents("php://input"));     
     $index = $data->prod_index;     
     //print_r($data)   ;
-    $del = mysql_query("DELETE FROM crm WHERE id = ".$index);
-    if($del)
+    $result = mysql_query("DELETE FROM crm WHERE id = ".$index);
+    if($result)
         return true;
     return false;     
 }
@@ -84,20 +85,12 @@ function delete_row() {
 function edit_row() {
     $data = json_decode(file_get_contents("php://input"));     
     $index = $data->prod_index; 
-    $qry = mysql_query('SELECT * from crm WHERE id='.$index);
-    $data = array();
-    while($rows = mysql_fetch_array($qry))
-    {
-        $data[] = array(
-                    "id"            =>  $rows['id'],
-                    "prod_name"     =>  $rows['prod_name'],
-                    "prod_desc"     =>  $rows['prod_desc'],
-                    "prod_price"    =>  $rows['prod_price'],
-                    "prod_quantity" =>  $rows['prod_quantity']
-                    );
-    }
-    //print_r(json_encode($data));
-    return json_encode($data);  
+    $result = mysql_query('SELECT * from crm WHERE id='.$index) or die('error editing');
+    $row = array();
+    $row = mysql_fetch_row($result);
+    // don't know why print_r is a must. otherwise won't work
+    print_r(json_encode($row));
+    return json_encode($row);  
 }
 
 /** Function to Update row **/
@@ -116,7 +109,7 @@ function update_row(){
     $qry = "UPDATE `crm` set `prod_name`='".$prod_name."' , `prod_desc`='".$prod_desc."',`prod_price`='".$prod_price."',`prod_quantity`='".$prod_quantity."' WHERE `id`=".$id;
     //$qry = sprintf("UPDATE crm set prod_name=%s, $prod_name=%s, prod_desc=%s, prod_price=%d, prod_quantity=%d WHERE id=%d")  
     //$qry = "UPDATE crm set prod_name='mark' where id=1";
-    mysql_query($qry) or die('fail to update in db.php');     
+    mysql_query($qry) or die('error updating');     
 }
 
 function importCsv(){
