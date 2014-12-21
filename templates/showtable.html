@@ -1,9 +1,9 @@
 <div>	    	
 	<br/>
 	<br/>
-	<h4>{{ actionForBox }}</h4>
+	<h4 class='text-primary'>{{ actionForBox }}</h4>
 	
-	<form calss='form-inline' role='form'>
+	<form class='form-inline' role='form'>
 		<input type="hidden" name="prod_id" ng-model="row.prod_id">
 		<input type="text" name="prod_name" ng-model="row.prod_name" placeholder="Enter row Name">
 		<input type="text" name="prod_desc" ng-model="row.prod_desc" placeholder="Enter row Description">
@@ -16,14 +16,15 @@
 	</form>
 
 	<br/>		
-	<h4>Search row</h4>
-	<div class="input-append">
-		<input type="text" ng-model="query" ng-change="search()" class="input-large search-query" placeholder="Search for a row">
+	<h4 class='text-primary'>Search row</h4>
+		<form class='form-inline' role='form'>
+		<input type="text" ng-model="query" ng-change="search()" class="form-control input-large search-query" placeholder="Search for a row">
 		<span class="glyphicon glyphicon-search"></span>
-	</div>
+		</from>
 	<br/>
 	<br/>
-	<table border=1  class="table table-striped table-condensed table-hover">
+	<div class="table-responsive">
+	<table border=1 class="table table-striped table-condensed table-hover">
 		<thead>
 			<th>ID</th>
 			<th>row Name&nbsp;<a ng-click="sortField ='prod_name'; reverse = !reverse"><i class="icon-sort"></i></a></th>
@@ -68,5 +69,6 @@
 		</tr> 		  
 	</tbody>	
 </table>
-<h4>Total number of rows: {{data.sharingRows.length}} </h4>
+</div>
+<small>Total number of rows: {{data.sharingRows.length}} </small>
 </div>
