@@ -1,3 +1,4 @@
+(function(){
 var app = angular.module('MyDirectives', []);
 /*
 app.directive('onReadFile', function ($parse) {
@@ -35,3 +36,4 @@ app.directive("onReadFile", [function () {
         }
     }
 }]);
+})();
