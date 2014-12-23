@@ -5,12 +5,26 @@
         return {sharingRows: []};    //also binding btw controllers
     });
 
-	app.factory('dataFactory', ['$http', function($http){
+	app.factory('dataFactory', ['$http', '$q', function($http, $q){
         // import csv file
         var factory = {};   
         
         // read CRM table from asiayo database
         factory.getData = function(){
+            /*
+            var defer = $q.defer();
+            $http.get("./php/db.php?action=get_data").success(function(data){
+                alert(data);  
+                //$scope.data.sharingRows=data; 
+                defer.resolve(data);  
+                //console.log(data);          
+            })
+            .error(function(error){
+                console.log('faile to read from db' + error.message);
+            });
+            return defer.promise;
+            */  
+            //var deferred = $q.defer();  // $q service contains the promise we'll return
             return $http.get("./php/db.php?action=get_data");            
         };
 

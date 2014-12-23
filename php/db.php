@@ -35,13 +35,13 @@ switch($_GET['action']){
 function add_row() {
 	// _GET_POST
     $data = json_decode(file_get_contents("php://input")); 
-    $prod_name      = $data->prod_name;    
-    $prod_desc      = $data->prod_desc;
-    $prod_price     = $data->prod_price;
-    $prod_quantity  = $data->prod_quantity;
+    $inn_name      = $data->inn_name;    
+    $tel      = $data->tel;
+    $fax     = $data->fax;
+    $addr  = $data->addr;
  
     // print_r($data);
-    $qry = 'INSERT INTO crm (prod_name,prod_desc,prod_price,prod_quantity) values ("' . $prod_name . '","' . $prod_desc . '",' .$prod_price . ','.$prod_quantity.')';
+    $qry = 'INSERT INTO crm (inn_name, tel, fax, addr) values ("' . $inn_name . '","' . $tel . '",' .$fax . ','.$addr.')';
    
     mysql_query($qry) or die('error adding row');    
 };
@@ -50,20 +50,29 @@ function add_row() {
 /**  Function to Get row  **/
 
 function get_data() {    
-    $qry = mysql_query('SELECT * from crm') or die('error getting data');
+    $result = mysql_query('SELECT * FROM crm WHERE 1') or die('error getting data:' .mysql_error());
+    //$colNum = mysql_num_fileds($result);
     $data = array();
-    while($rows = mysql_fetch_array($qry))
-    {
+    $i=0;
+    /*
+    while($row = mysql_fetch_assoc($result)){
+        $data[]=$row;
+        $i++;
+    }
+    */
+   
+    while($rows = mysql_fetch_array($result)){
         $data[] = array(
-                    "prod_id"       => $rows['id'], // db table's col name
-                    "prod_name"     => $rows['prod_name'],
-                    "prod_desc"     => $rows['prod_desc'],
-                    "prod_price"    => $rows['prod_price'],
-                    "prod_quantity" => $rows['prod_quantity']
+                    "id"       => $rows['id'], // db table's col name
+                    "inn_name"     => $rows['inn_name'],
+                    "tel"     => $rows['tel'],
+                    "fax"    => $rows['fax'],
+                    "addr" => $rows['addr']
                     );
     }
+   
     // don't know why print_r is a must. otherwise won't work
-    print_r(json_encode($data));
+    print(json_encode($data));
     return json_encode($data);  
 }
 
@@ -99,14 +108,14 @@ function update_row(){
     $data = json_decode(file_get_contents("php://input"));     
     
     $id             =   $data->id;
-    $prod_name      =   $data->prod_name;    
-    $prod_desc      =   $data->prod_desc;
-    $prod_price     =   $data->prod_price;
-    $prod_quantity  =   $data->prod_quantity;
+    $inn_name      =   $data->inn_name;    
+    $tel     =   $data->tel;
+    $fax     =   $data->fax;
+    $addr  =   $data->addr;
 
     //print_r($data);
  
-    $qry = "UPDATE `crm` set `prod_name`='".$prod_name."' , `prod_desc`='".$prod_desc."',`prod_price`='".$prod_price."',`prod_quantity`='".$prod_quantity."' WHERE `id`=".$id;
+    $qry = "UPDATE `crm` set `inn_name`='".$inn_name."' , `tel`='".$tel."',`fax`='".$fax."',`addr`='".$addr."' WHERE `id`=".$id;
     //$qry = sprintf("UPDATE crm set prod_name=%s, $prod_name=%s, prod_desc=%s, prod_price=%d, prod_quantity=%d WHERE id=%d")  
     //$qry = "UPDATE crm set prod_name='mark' where id=1";
     mysql_query($qry) or die('error updating');     

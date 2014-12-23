@@ -11,22 +11,24 @@
     $scope.row = [];
     $scope.currentPage   =  0;
     $scope.reverse = false;
-    $scope.sortField = 'prod_name';
+    $scope.sortField = 'inn_name';
     $scope.showAddBtn = true;
 
     /** function to get detail of row added in mysql referencing php **/
-
+    // remember to change success to then for all functions later when i have time
     $scope.get_row = function() {
+    //    $scope.data.sharingRows = dataFactory.getData();      
         dataFactory.getData()
-            .success(function(data){
+            .then(function(promise){
                 //$scope.rows=data;  
-                $scope.data.sharingRows=data;             
-            })
-            .error(function(error){
-                console.log('faile to read from db' + error.message);
-            });
+                $scope.data.sharingRows=promise.data;              
+                console.log(promise.data);          
+            },
+            function(error){
+                console.log('faile to read from db' + error);
+            });          
     };
-
+    
     /** function to add details for rows in mysql referecing php **/
 
     $scope.add_row = function(row) {
@@ -72,11 +74,11 @@
         .success(function (data) {    
             //alert(data[0]["prod_name"]);
             // 2-way data binding
-            $scope.row.prod_id          =   data[0];
-            $scope.row.prod_name        =   data[1];
-            $scope.row.prod_desc        =   data[2];
-            $scope.row.prod_price       =   data[3];
-            $scope.row.prod_quantity    =   data[4];           
+            $scope.row.id = data[0];
+            $scope.row.inn_name = data[1];
+            $scope.row.tel = data[2];
+            $scope.row.fax = data[3];
+            $scope.row.addr = data[4];           
         })
         .error(function(data, status, headers, config){ 
             console.log('fail to edit row');
