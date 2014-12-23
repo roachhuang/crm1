@@ -54,26 +54,36 @@ function get_data() {
     //$colNum = mysql_num_fileds($result);
     $data = array();
     $i=0;
-    /*
+/*
     while($row = mysql_fetch_assoc($result)){
         $data[]=$row;
         $i++;
     }
-    */
-   
+
+*/   
     while($rows = mysql_fetch_array($result)){
         $data[] = array(
                     "id"       => $rows['id'], // db table's col name
                     "inn_name"     => $rows['inn_name'],
                     "tel"     => $rows['tel'],
                     "fax"    => $rows['fax'],
-                    "addr" => $rows['addr']
+                    "addr" => $rows['addr'],
+                    'status' =>$rows['status'],
+                    'website'=>$rows['email'],
+                    'landlord'=>$rows['landlord'],
+                    'type'=>$rows['type'],
+                    'no_of_room'=>$rows['no_of_room'],
+                    'prices'=>$rows['prices'],
+                    'certificated_date'=>$rows['certificated_date'],
+                    'remodel_date'=>$rows['remodel_date']
                     );
     }
-   
+  
     // don't know why print_r is a must. otherwise won't work
-    print(json_encode($data));
-    return json_encode($data);  
+    //print(json_encode($data));
+    
+    echo json_encode($data);
+    //return $json_response;  
 }
 
 

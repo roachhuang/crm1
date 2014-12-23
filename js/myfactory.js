@@ -19,7 +19,7 @@
                 defer.resolve(data);  
                 //console.log(data);          
             })
-            .error(function(error){
+            .error(function(error){                
                 console.log('faile to read from db' + error.message);
             });
             return defer.promise;

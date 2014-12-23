@@ -1,15 +1,11 @@
 (function(){
-	var app = angular.module('crmControllers', ['ngCsv']);
+	var app = angular.module('crmControllers', ['angularUtils.directives.dirPagination', 'ngCsv']);
 
-	app.controller('tblCtrl', ['$scope', '$http', 'dataFactory', 'sharing', function($scope, $http, dataFactory, sharing) {
-    $scope.filteredItems =  [];
-    $scope.groupedItems  =  [];
-    $scope.itemsPerPage  =  3;
-    $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-    //$scope.rows =  []];
+	app.controller('tblCtrl', ['$scope', 'dataFactory', 'sharing', function($scope, dataFactory, sharing) {
+       //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
+       //$scope.rows =  []];
     $scope.actionForBox = 'Add a row';
-    $scope.row = [];
-    $scope.currentPage   =  0;
+    $scope.row = [];   
     $scope.reverse = false;
     $scope.sortField = 'inn_name';
     $scope.showAddBtn = true;
@@ -17,16 +13,21 @@
     /** function to get detail of row added in mysql referencing php **/
     // remember to change success to then for all functions later when i have time
     $scope.get_row = function() {
+        $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
     //    $scope.data.sharingRows = dataFactory.getData();      
-        dataFactory.getData()
+        dataFactory.getData()        
             .then(function(promise){
-                //$scope.rows=data;  
-                $scope.data.sharingRows=promise.data;              
+                $scope.data.sharingRows=promise.data;  
+                $scope.currentPage =1;
+                $scope.entryLimit = 10; // max no of rows displaying in a page
+                $scope.filteredItems = $scope.data.sharingRows.lenght; //init for no filter
+                $scope.totalItems = $scope.data.sharingRows.lenght;
+                //$scope.rows=data;                             
                 console.log(promise.data);          
             },
             function(error){
                 console.log('faile to read from db' + error);
-            });          
+            });                      
     };
     
     /** function to add details for rows in mysql referecing php **/
@@ -116,43 +117,6 @@
         }        
         $scope.row=[];
     };
-
-    /** function to call prvious page , click on paging items button previous for row list **/
-
-    $scope.prevPage = function() {        
-        if ($scope.currentPage > 0) {
-            $scope.currentPage--;
-        }
-    };
-
-    /** function to set current page on paging items for row list **/
-
-    $scope.setPage = function() { 
-        alert(this.n);
-        $scope.currentPage = this.n;
-    };
-
-    /** function to call next page , click on paging items button next for row list **/
-
-    $scope.nextPage = function() {
-        if ($scope.currentPage < $scope.pagedItems.length - 1) {
-            $scope.currentPage++;
-        }
-    };    
-
-    /** fucntion to define the total number of pages, in reference of row list items based upon itemsperpage **/
-
-    $scope.range = function (start, end) {             
-        var ret = [];
-        if (!end) {
-            end = start;
-            start = 0;
-        }
-        for (var i = start; i < end; i++) {
-            ret.push(i);
-        }
-        return ret;
-    };  
 
     }]); // end of Crmcontroller
 
