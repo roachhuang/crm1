@@ -13,6 +13,12 @@ app.directive('inputBox', function(){
 		templateUrl: './templates/inputbox.html'
 	}
 });
+app.directive('navBar', function(){
+	return{
+		restrict: 'E',
+		templateUrl: './templates/navbar.html'
+	}
+});
 /*
 app.directive('onReadFile', function ($parse) {
 	return {
