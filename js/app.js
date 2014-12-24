@@ -1,5 +1,6 @@
-(function(){    
-    var app = angular.module('crmApp', ['ngRoute', 'crmControllers', 'MyFactory']);    
+(function(){  
+    // moudle name in camel case
+    var app = angular.module('crmApp', ['ngRoute', 'myDirective', 'myController', 'myFactory']);    
 
     /* variable app is  a variable which used to control the array values to show the data to show in view  using the module name 'app' with arguments as an array */
 
@@ -11,17 +12,17 @@
         $routeProvider.
         when("/showtable",
             {           
-                controller: 'tblCtrl',
+                controller: 'TblController as TblCtrl',
                 templateUrl: "./templates/showtable.html"
             })      
         .when("/import",
             {           
-                controller: 'importCtrl',
+                controller: 'ImportController as ImportCtrl',
                 templateUrl: "./templates/import.html"
             })  
         .when("/export",
             {           
-                controller: 'exportCtrl',
+                controller: 'ExportController as ExportCtrl',
                 templateUrl: "./templates/export.html"
             })  
         .when("/home",

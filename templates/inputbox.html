@@ -1,0 +1,13 @@
+<h4 class='text-primary'>{{ actionForBox }}</h4>
+	
+<form class='form-inline' role='form'>
+	<input type="hidden" ng-model="row.id">
+	<input type="text" ng-model="row.inn_name" placeholder="Enter row Name">
+	<input type="text" ng-model="row.tel" placeholder="Enter row Description">
+	<input type="text" ng-model="row.fax" placeholder="Enter row Price">
+	<input type="text" ng-model="row.addr" placeholder="Enter row Quantity">
+	<button class='btn btn-primary' aria-label="Left Align" ng-show='showAddBtn' ng-click="add_row(row)"><span class="glyphicon glyphicon-plus"></span> Add&nbsp;&nbsp;</button>
+	<button class='btn btn-info' aria-label="Left Align" ng-hide='showAddBtn' ng-click="update_row(row)"><span class="glyphicon glyphicon-retweet"></span> Update</button>
+	<button class='btn btn-warning' ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>	
+</form>
+	

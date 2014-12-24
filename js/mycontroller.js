@@ -1,7 +1,7 @@
 (function(){
-	var app = angular.module('crmControllers', ['angularUtils.directives.dirPagination', 'ngCsv']);
+	var app = angular.module('myController', ['angularUtils.directives.dirPagination', 'ngCsv']);
 
-	app.controller('tblCtrl', ['$scope', 'dataFactory', 'sharing', function($scope, dataFactory, sharing) {
+	app.controller('TblController', ['$scope', 'dataFactory', 'sharing', function($scope, dataFactory, sharing) {
        //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
        //$scope.rows =  []];
     $scope.actionForBox = 'Add a row';
@@ -19,7 +19,7 @@
             .then(function(promise){
                 $scope.data.sharingRows=promise.data;  
                 $scope.currentPage =1;
-                $scope.entryLimit = 10; // max no of rows displaying in a page
+                $scope.pageSize = 5; // max no of rows displaying in a page
                 $scope.filteredItems = $scope.data.sharingRows.lenght; //init for no filter
                 $scope.totalItems = $scope.data.sharingRows.lenght;
                 //$scope.rows=data;                             
@@ -121,7 +121,7 @@
     }]); // end of Crmcontroller
 
     // import controller
-    app.controller('importCtrl', function($scope, dataFactory, sharing){
+    app.controller('ImportController', function($scope, dataFactory, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
         $scope.importCsv = function(cvsfilename){
             /* for security reason browsers don't allow us to get file's full url.*/ 
@@ -178,7 +178,7 @@
     */
 
     // export controller
-    app.controller('exportCtrl', function($scope, sharing){
+    app.controller('ExportController as ExportCtrl', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
     });
 })();

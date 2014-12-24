@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('MyFactory', []);
+	var app = angular.module('myFactory', []);
 
     app.factory('sharing', function(){
         return {sharingRows: []};    //also binding btw controllers

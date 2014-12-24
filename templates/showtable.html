@@ -1,43 +1,30 @@
-<div>	    	
-	<br/>
-	<br/>
-	<h4 class='text-primary'>{{ actionForBox }}</h4>
-	
-	<form class='form-inline' role='form'>
-		<input type="hidden" ng-model="row.id">
-		<input type="text" ng-model="row.inn_name" placeholder="Enter row Name">
-		<input type="text" ng-model="row.tel" placeholder="Enter row Description">
-		<input type="text" ng-model="row.fax" placeholder="Enter row Price">
-		<input type="text" ng-model="row.addr" placeholder="Enter row Quantity">
-		<button class='btn btn-primary' aria-label="Left Align" ng-show='showAddBtn' ng-click="add_row(row)"><span class="glyphicon glyphicon-plus"></span> Add&nbsp;&nbsp;</button>
-		<button class='btn btn-info' aria-label="Left Align" ng-hide='showAddBtn' ng-click="update_row(row)"><span class="glyphicon glyphicon-retweet"></span> Update</button>
-		<button class='btn btn-warning' ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>	
-		</form>	
-	</form>
+<div>
+	<input-box></input-box>
+</div>
+<div>	
+	<search-box></search-box>
+</div>
 
-	<br/>		
-	<h4 class='text-primary'>Search row</h4>
-		<form class='form-inline' role='form'>
-		<input type="text" ng-model="query" ng-change="search()" class="form-control input-large search-query" placeholder="Search for a row">
-		<span class="glyphicon glyphicon-search"></span>
-		</from>
-	<br/>
-	<br/>
-	
-	<table border=1 class="table table-striped table-condensed table-hover">
+<div class='table-responsive'>
+	<table border=1 class="table table-striped table-condensed table-hover">		
 		<thead>
 			<th>ID</th>
 			<th>Inn name<a ng-click="sortField ='inn_name'; reverse = !reverse"><i class="icon-sort"></i></a></th>
+			<th>English name></th>
+			<th>Japanes Name></th>			
 			<th>Tel<a ng-click="sortField ='tel'; reverse = !reverse"><i class="icon-sort"></i></a></th>
 			<th>Fax<a ng-click="sortField ='fax'; reverse = !reverse"><i class="icon-sort"></i></a></th>
-			<th>Addr<a ng-click="sortField ='addr'; reverse = !reverse"><i class="icon-sort"></th>	 
-			<th>Status</th>
+			<th>Addr<a ng-click="sortField ='addr'; reverse = !reverse"><i class="icon-sort"></th>
+			<th>Eng Addr</th>
+			<th>Jpn Addr</th>	 
+			<th>Status</th>			
 			<th>Website</th>
 			<th>Email</th>
 			<th>Landlord</th>
 			<th>Type</th>
 			<th>No of Rooms</th>
 			<th>Price range</th>
+			<th>Traffic&Viewspot</th>
 			<th>Certificated date</th>
 			<th>Remodel date</th>	
 			<th>Operation</th>						
@@ -49,16 +36,21 @@
 					 | orderBy:sortField:reverse | itemsPerPage: 8">
 			<td>{{ row.id }}</td> 
 			<td>{{ row.inn_name | uppercase }}</td>
+			<td>{{ row.eng_name }}</td>
+			<td>{{ row.jpn_name }}</td>
 			<td>{{ row.tel }}</td>
 			<td>{{ row.fax }}</td>
 			<td>{{ row.addr }}</td>
+			<td>{{ row.eng_addr }}</td>
+			<td>{{ row.jpn_addr }}</td>
 			<td>{{ row.status }}</td>
 			<td>{{ row.website }}</td>			
 			<td>{{ row.email }}</td>
 			<td>{{ row.landlord }}</td>
 			<td>{{ row.type }}</td>
 			<td>{{ row.no_of_room }}</td>				
-			<td>{{ row.prices }}</td>			
+			<td>{{ row.prices }}</td>	
+			<td>{{ row.traffic }}</td>
 			<td>{{ certificated_date }}</td>
 			<td>{{ remodel_date }}</td>
 			<td>
@@ -71,7 +63,9 @@
 		</tr> 		  
 	</tbody>	
 </table>
+<small>Total entries: <span class='badge'>{{data.sharingRows.length}}</span> </small>
+</div>
+
 <dir-pagination-controls></dir-pagination-controls>
 
-<small>Total number of rows: {{data.sharingRows.length}} </small>
-</div>
+

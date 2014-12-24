@@ -1,5 +1,18 @@
 (function(){
-var app = angular.module('MyDirectives', []);
+var app = angular.module('myDirective', []);
+
+app.directive('searchBox', function(){
+	return{
+		restrict: 'E',
+		templateUrl: './templates/searchbox.html'
+	}
+});
+app.directive('inputBox', function(){
+	return{
+		restrict: 'E',
+		templateUrl: './templates/inputbox.html'
+	}
+});
 /*
 app.directive('onReadFile', function ($parse) {
 	return {

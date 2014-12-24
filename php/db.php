@@ -46,28 +46,28 @@ function add_row() {
     mysql_query($qry) or die('error adding row');    
 };
 
-
 /**  Function to Get row  **/
-
-function get_data() {    
+function get_data() {  
+    mysql_query('SET CHARACTER SET big5');  
     $result = mysql_query('SELECT * FROM crm WHERE 1') or die('error getting data:' .mysql_error());
     //$colNum = mysql_num_fileds($result);
     $data = array();
-    $i=0;
-/*
+    $row=[];
     while($row = mysql_fetch_assoc($result)){
-        $data[]=$row;
-        $i++;
+        $data[]=array_map('utf8_encode', $row);   //json_encode only accept utf8 format    
     }
-
-*/   
+    if (mysql_num_rows($result) === 0)
+        return false;
+/*   
     while($rows = mysql_fetch_array($result)){
         $data[] = array(
                     "id"       => $rows['id'], // db table's col name
-                    "inn_name"     => $rows['inn_name'],
+                    "inn_name"  => $rows['inn_name'],
                     "tel"     => $rows['tel'],
                     "fax"    => $rows['fax'],
                     "addr" => $rows['addr'],
+                    'eng_addr' =>$rows['eng_addr'],  // col name
+                    'jpn_addr' =>$rows['jpn_addr'],
                     'status' =>$rows['status'],
                     'website'=>$rows['email'],
                     'landlord'=>$rows['landlord'],
@@ -78,12 +78,12 @@ function get_data() {
                     'remodel_date'=>$rows['remodel_date']
                     );
     }
-  
+*/  
     // don't know why print_r is a must. otherwise won't work
-    //print(json_encode($data));
-    
-    echo json_encode($data);
-    //return $json_response;  
+    //print(json_encode($data));    
+    echo json_encode( $data );
+    //print_r ($data);
+    //return json_encode($data);  
 }
 
 
