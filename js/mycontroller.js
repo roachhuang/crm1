@@ -5,7 +5,9 @@
        //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
        //$scope.rows =  []];
     $scope.actionForBox = 'Add a row';
-    $scope.row = [];   
+    $scope.row = [];  
+    $scope.pageSize=6; 
+    //$scope.currentPage=1;
     $scope.reverse = false;
     $scope.sortField = 'inn_name';
     $scope.showAddBtn = true;
