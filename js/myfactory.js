@@ -37,15 +37,7 @@
         };
 
         factory.updateRow = function(row){   
-            return $http.post('./php/db.php?action=update_row', 
-                    {
-                     id: row.prod_id,
-                     prod_name: row.prod_name,
-                     prod_desc: row.prod_desc, 
-                     prod_price: row.prod_price,
-                     prod_quantity: row.prod_quantity
-                    }
-                  );
+            return $http.post('./php/db.php?action=update_row',  row);    
         };  
 
         factory.submit = function(row){

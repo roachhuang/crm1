@@ -77,11 +77,14 @@
         .success(function (data) {    
             //alert(data[0]["prod_name"]);
             // 2-way data binding
+            $scope.row = data;
+            /*
             $scope.row.id = data[0];
             $scope.row.inn_name = data[1];
             $scope.row.tel = data[2];
             $scope.row.fax = data[3];
             $scope.row.addr = data[4];           
+            */
         })
         .error(function(data, status, headers, config){ 
             console.log('fail to edit row');

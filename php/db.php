@@ -35,10 +35,17 @@ switch($_GET['action']){
 function add_row() {
 	// _GET_POST
     $data = json_decode(file_get_contents("php://input")); 
-    $inn_name      = $data->inn_name;    
-    $tel      = $data->tel;
-    $fax     = $data->fax;
-    $addr  = $data->addr;
+    //$id = $data->id;    // id + city form a primary key
+    $inn_name = $data->inn_name;    
+    $tel = $data->tel;
+    $fax = $data->fax;
+    $mobile=$data->mobile;
+    $addr = $data->addr;
+    $website=$data->website;
+    $email=$data->email;
+    $landload=$data->lanlord;
+    $no_of_room=$data->no_of_room;
+    $prices=$data->prices;
  
     // print_r($data);
     $qry = 'INSERT INTO crm (inn_name, tel, fax, addr) values ("' . $inn_name . '","' . $tel . '",' .$fax . ','.$addr.')';
@@ -106,9 +113,9 @@ function edit_row() {
     $index = $data->prod_index; 
     $result = mysql_query('SELECT * from crm WHERE id='.$index) or die('error editing');
     $row = array();
-    $row = mysql_fetch_row($result);
+    $row = mysql_fetch_assoc($result);  // thus we can get field names from controller
     // don't know why print_r is a must. otherwise won't work
-    print_r(json_encode($row));
+    print(json_encode($row));
     return json_encode($row);  
 }
 
@@ -117,18 +124,28 @@ function edit_row() {
 function update_row(){
     $data = json_decode(file_get_contents("php://input"));     
     
-    $id             =   $data->id;
-    $inn_name      =   $data->inn_name;    
-    $tel     =   $data->tel;
-    $fax     =   $data->fax;
-    $addr  =   $data->addr;
+    $id = $data->id;
+    $inn_name = $data->inn_name;    
+    $tel = $data->tel;
+    $fax = $data->fax;
+    $mobile=$data->mobile;
+    $addr = $data->addr;
+    $website=$data->website;
+    $email=$data->email;
+    $landload=$data->lanlord;
+    $no_of_room=$data->no_of_room;
+    $prices=$data->prices;
 
     //print_r($data);
  
-    $qry = "UPDATE `crm` set `inn_name`='".$inn_name."' , `tel`='".$tel."',`fax`='".$fax."',`addr`='".$addr."' WHERE `id`=".$id;
+    $qry = "UPDATE `crm` set `inn_name`='".$inn_name."', `tel`='".$tel."',
+            `fax`='".$fax."', `addr`='".$addr."', `mobile`='".$mobile."', `no_of_room`='".$no_of_room."',
+            `website`='".$website."', `email`='".$email."', `landlord`='".$landlord."', `prices`='".$prices."'
+            WHERE `id`=".$id;
+
     //$qry = sprintf("UPDATE crm set prod_name=%s, $prod_name=%s, prod_desc=%s, prod_price=%d, prod_quantity=%d WHERE id=%d")  
     //$qry = "UPDATE crm set prod_name='mark' where id=1";
-    mysql_query($qry) or die('error updating');     
+    mysql_query($qry) or die('error updating:' . mysql_error());     
 }
 
 function importCsv(){
