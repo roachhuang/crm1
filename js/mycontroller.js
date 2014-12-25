@@ -183,7 +183,7 @@
     */
 
     // export controller
-    app.controller('ExportController as ExportCtrl', function($scope, sharing){
+    app.controller('ExportController', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
     });
 })();

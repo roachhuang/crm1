@@ -12,22 +12,21 @@
         $routeProvider.
         when("/showtable",
             {           
-                controller: 'TblController as TblCtrl',
+                controller: 'TblController',
                 templateUrl: "./templates/showtable.html"
             })      
         .when("/import",
             {           
-                controller: 'ImportController as ImportCtrl',
+                controller: 'ImportController',
                 templateUrl: "./templates/import.html"
             })  
         .when("/export",
             {           
-                controller: 'ExportController as ExportCtrl',
+                controller: 'ExportController',
                 templateUrl: "./templates/export.html"
             })  
         .when("/home",
-            {           
-                //controller: 'exportCtrl',
+            {       
                 templateUrl: "./templates/home.html"
             })  
         .otherwise({redirectTo: './showtable.html'});            
