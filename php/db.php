@@ -1,4 +1,5 @@
 <?php
+//header('Content-Type: text/html; charset=utf-8');
 
 require_once('./config.php'); 
 
@@ -48,13 +49,14 @@ function add_row() {
 
 /**  Function to Get row  **/
 function get_data() {  
-    mysql_query('SET CHARACTER SET big5');  
+    //mysql_query('SET CHARACTER SET utf-8');  
     $result = mysql_query('SELECT * FROM crm WHERE 1') or die('error getting data:' .mysql_error());
     //$colNum = mysql_num_fileds($result);
     $data = array();
     $row=[];
     while($row = mysql_fetch_assoc($result)){
-        $data[]=array_map('utf8_encode', $row);   //json_encode only accept utf8 format    
+        //$data[]=array_map('utf8_encode', $row);   //json_encode only accept utf8 format    
+        $data[]=$row;
     }
     if (mysql_num_rows($result) === 0)
         return false;
@@ -78,12 +80,9 @@ function get_data() {
                     'remodel_date'=>$rows['remodel_date']
                     );
     }
-*/  
-    // don't know why print_r is a must. otherwise won't work
-    //print(json_encode($data));    
-    echo json_encode( $data );
-    //print_r ($data);
-    //return json_encode($data);  
+*/     
+    // echo json_encode( $data, JSON_UNESCAPED_UNICODE);
+    echo json_encode($data);  
 }
 
 
