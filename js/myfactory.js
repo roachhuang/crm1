@@ -62,7 +62,9 @@
         factory.importCsv = function(){
             console.log('called factory.importcsv');
             var fileToUpload = '../test.csv';   // relative to db.php's path
-            return $http.post('./php/db.php?action=importCsv', {filename: fileToUpload});               
+            return $http.post('./php/db.php?action=importCsv', 
+                    {filename: fileToUpload,
+                     city: city});               
         };
 
         return factory; // return an object
