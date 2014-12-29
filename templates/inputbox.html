@@ -2,10 +2,20 @@
 	
 <form class='form-inline' role='form'>
 	<input type="hidden" ng-model="row.id">
-	<input type="text" ng-model="row.inn_name" placeholder="Enter row Name">
-	<input type="text" ng-model="row.tel" placeholder="Enter row Description">
-	<input type="text" ng-model="row.fax" placeholder="Enter row Price">
-	<input type="text" ng-model="row.addr" placeholder="Enter row Quantity">
+	<input type="text" ng-model="row.inn_name" placeholder='inn name'>
+	<input type="text" ng-model="row.tel" placeholder='tel'>
+	<input type="text" ng-model="row.fax" placeholder='fax'>
+	<input type="text" ng-model="row.mobile" placeholder='mobile'>
+	<input type="text" ng-model="row.addr" placeholder='chn address'>
+	<input type="text" ng-model="row.eng_addr" placeholder='eng address'>
+	<input type="text" ng-model="row.jpn_addr" placeholder='jpn address'>
+	<input type="text" ng-model="row.status" placeholder='status'>
+	<input type="text" ng-model="row.website" placeholder='website'>
+	<input type="email" ng-model="row.email" placeholder='email'>
+	<input type="text" ng-model="row.landlord" placeholder='landlord'>
+	<input type="text" ng-model="row.no_of_room" placeholder='no of room'>
+	<input type="text" ng-model="row.prices" placeholder='price range'>
+
 	<button class='btn btn-primary' aria-label="Left Align" ng-show='showAddBtn' ng-click="add_row(row)"><span class="glyphicon glyphicon-plus"></span> Add&nbsp;&nbsp;</button>
 	<button class='btn btn-info' aria-label="Left Align" ng-hide='showAddBtn' ng-click="update_row(row)"><span class="glyphicon glyphicon-retweet"></span> Update</button>
 	<button class='btn btn-warning' ng-click="cancel()"><span class="glyphicon glyphicon-remove"></span> Cancel</button>	

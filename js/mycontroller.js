@@ -77,11 +77,14 @@
         .success(function (data) {    
             //alert(data[0]["prod_name"]);
             // 2-way data binding
+            $scope.row = data;
+            /*
             $scope.row.id = data[0];
             $scope.row.inn_name = data[1];
             $scope.row.tel = data[2];
             $scope.row.fax = data[3];
             $scope.row.addr = data[4];           
+            */
         })
         .error(function(data, status, headers, config){ 
             console.log('fail to edit row');
@@ -126,19 +129,37 @@
     app.controller('ImportController', function($scope, dataFactory, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
         $scope.cities =[
-        'taipei',
-        'new taipei',
-        'tainan',
-        'xin zhu'
+            'Changhua',
+            'Chiayi',
+            'Chiayi City',
+            'Hsinchu',
+            'Hsinchu City',
+            'Hualien',
+            'Kaohsiung',
+            'Keelung',
+            'Kinmen',
+            'Mazu',
+            'Miaoli',
+            'Nantou',
+            'New Taipei City',
+            'Penghu',
+            'Pingtung',
+            'Taichung',
+            'Tainan',
+            'Taipei City',
+            'Taitung',
+            'Taoyuan',
+            'Yilan',
+            'Yunlin'
         ];
-        $scope.importCsv = function(csvfilename, city){
+            $scope.importCsv = function(fileName, city){
             /* for security reason browsers don't allow us to get file's full url.*/ 
             //console.log($scope.uploadme);
             //path = document.getElementById('myFileInput').value; 
             //$csv = csvfilename;
             console.log('$csv');
 
-            dataFactory.importCsv(csvfilename, city)     //pass csv content to php       
+            dataFactory.importCsv(fileName, city)     //pass csv content to php       
             .success(function (data, status, headers, config) {
                 console.log(data); 
             })
@@ -186,7 +207,7 @@
     */
 
     // export controller
-    app.controller('ExportController as ExportCtrl', function($scope, sharing){
+    app.controller('ExportController', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
     });
 })();
