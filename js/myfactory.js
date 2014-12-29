@@ -51,10 +51,11 @@
             );
         };
 
-        factory.importCsv = function(){
+        factory.importCsv = function(fileName, city){
             console.log('called factory.importcsv');
             var fileToUpload = '../test.csv';   // relative to db.php's path
-            return $http.post('./php/db.php?action=importCsv', {filename: fileToUpload});               
+            // remember to change this after fixing fileanme issue
+            return $http.post('./php/db.php?action=importCsv', {filename: fileToUpload, city: city});               
         };
 
         return factory; // return an object
