@@ -137,6 +137,9 @@ function importCsv(){
    
     //while(!feof($fd){ 
     $csv=[];
+    $sql = "LOAD DATA LOCAL INFILE 'c:\users\roach\download\test.csv' INTO TABLE tmpCrm FIELDS TERMINATED BY ','";
+    mysql_query($sql) or die('error infile');    
+    /*
     while($csv = fgetcsv($fd, 1000, ",")){
               
         mysql_query("INSERT INTO abc (1st, 2nd) VALUES 
@@ -147,7 +150,9 @@ function importCsv(){
             ") or die ('error insertion'); 
             
     }   
-    fclose($fd);      
+    fclose($fd); 
+    */
+
 }
   
 function __destruct(){

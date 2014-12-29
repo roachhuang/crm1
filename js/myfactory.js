@@ -59,7 +59,7 @@
             );
         };
 
-        factory.importCsv = function(){
+        factory.importCsv = function(fileName, city){
             console.log('called factory.importcsv');
             var fileToUpload = '../test.csv';   // relative to db.php's path
             return $http.post('./php/db.php?action=importCsv', 

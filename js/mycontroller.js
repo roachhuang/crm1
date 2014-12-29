@@ -131,7 +131,7 @@
         'tainan',
         'xin zhu'
         ];
-        $scope.importCsv = function(cvsfilename, city){
+        $scope.importCsv = function(csvfilename, city){
             /* for security reason browsers don't allow us to get file's full url.*/ 
             //console.log($scope.uploadme);
             //path = document.getElementById('myFileInput').value; 
