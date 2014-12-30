@@ -157,7 +157,7 @@
             //console.log($scope.uploadme);
             //path = document.getElementById('myFileInput').value; 
             //$csv = csvfilename;
-            console.log('$csv');
+            //console.log('$csv');
 
             dataFactory.importCsv(fileName, city)     //pass csv content to php       
             .success(function (data, status, headers, config) {

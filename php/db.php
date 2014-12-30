@@ -155,12 +155,12 @@ function importCsv(){
     $sql = "CREATE TEMPORARY TABLE tmpCrm LIKE crm ";
     mysql_query($sql) or die('error cearting tmp table:' . mysql_error());  
 
-    $fd = fopen($filename, 'r') or die ('error opening csv file');
+    //$fd = fopen($filename, 'r') or die ('error opening csv file');
    
     //while(!feof($fd){ 
     $csv=[];
-
-    $sql = "LOAD DATA LOCAL INFILE 'c:\users\roach\download\test.csv' INTO TABLE tmpCrm FIELDS TERMINATED BY ','";
+    // import csv into table tmpCrm 
+    $sql = "LOAD DATA LOCAL INFILE '/var/www/html/crm/test.csv' INTO TABLE tmpCrm FIELDS TERMINATED BY ',' IGNORE 1 LINES";
     mysql_query($sql) or die('error infile');    
     /*  
     while($csv = fgetcsv($fd, 1000, ","))
@@ -178,44 +178,37 @@ function importCsv(){
     fclose($fd);
     */
     // so complex! if conflict, crm always wins
-    $sql = "CREATE TEMPORARY TABLE t1 ( \n"
-    . "SELECT \n"
-    . " tmpCrm.id,\n"
-    . " tmpCrm.city, \n"
-    . " COALESCE(crm.inn_name, tmpCrm.inn_name) as inn_name,\n"
-    . " COALESCE(crm.eng_name, tmpCrm.eng_name) as eng_name,\n"
-    . " tmpCrm.jpn_name, \n"
-    . " COALESCE(crm.tel, tmpCrm.tel) as tel,\n"
-    . " COALESCE(crm.fax, tmpCrm.fax) as fax,\n"
-    . " COALESCE(crm.mobile, tmpCrm.mobile) as mobile,\n"    
-    . " COALESCE(crm.addr, tmpCrm.addr) as addr,\n"
-    . " tmpCrm.eng_addr, \n"
-    . " tmpCrm.jpn_addr, \n"
-    . " tmpCrm.status, \n"      
-    . " COALESCE(crm.website, temp.website) as website\n"
-    . " COALESCE(crm.email, temp.email) as email,\n"
-    . " COALESCE(crm.landlord, tmpCrm.landlord) as landlord,\n"
-    . " tmpCrm.type, \n" 
-    . " COALESCE(crm.no_of_room, tmpCrm.no_of_room) as no_of_room,\n"
-    . " tmpCrm.prices, \n"
-    . " COALESCE(crm.traffic, tmpCrm.traffic) as traffic,\n"
-    . " tmpCrm.certificated_date, \n"
-    . " tmpCrm.remodel_date, \n"
-    . " tmpCrm.pix_upload_date \n"
-    . " tmpCrm.source \n"
-    . " tmpCrm.in_charge \n"
-    . " tmpCrm.approach \n"     
-    . " FROM \n"
-    . " tmpCrm\n"
-    . " LEFT JOIN crm\n"
-    . " ON tmpCrm.id = crm.id \n"
-    . " and tmpCrm.city = crm.city\n"
-    . " )\n"
-    . "";
-    mysql_query($sql) or die('error resolving conflict:' . mysql_error());   
+$sql = <<<EOD
+    CREATE TEMPORARY TABLE t1
+    SELECT tmpCrm.id, tmpCrm.city,
+    COALESCE(crm.inn_name, tmpCrm.inn_name) as inn_name,
+    COALESCE(crm.eng_name, tmpCrm.eng_name) as eng_name,
+    tmpCrm.jpn_name,
+    COALESCE(crm.tel, tmpCrm.tel) as tel,
+    COALESCE(crm.fax, tmpCrm.fax) as fax,
+    COALESCE(crm.mobile, tmpCrm.mobile) as mobile,
+    COALESCE(crm.addr, tmpCrm.addr) as addr,
+    tmpCrm.eng_addr, tmpCrm.jpn_addr, tmpCrm.status,
+    COALESCE(crm.website, tmpCrm.website) as website,
+    COALESCE(crm.email, tmpCrm.email) as email,
+    COALESCE(crm.landlord, tmpCrm.landlord) as landlord,
+    tmpCrm.type,
+    COALESCE(crm.no_of_room, tmpCrm.no_of_room) as no_of_room,
+    tmpCrm.prices,
+    COALESCE(crm.traffic, tmpCrm.traffic) as traffic,
+    tmpCrm.certificated_date, tmpCrm.remodel_date, tmpCrm.pix_upload_date,
+    tmpCrm.source, tmpCrm.in_charge, tmpCrm.approach
+    FROM tmpCrm
+    LEFT JOIN crm ON tmpCrm.id = crm.id and tmpCrm.city = crm.city
+EOD;
+    mysql_query($sql) or die('error resolving conflict:' . mysql_error());  
+
     // almost drive me crazy.
-    $sql="SELECT * FROM t1 UNION SELECT * FROM crm";
+    $sql="CREATE TEMPORARY TABLE t2 SELECT * FROM t1 UNION SELECT * FROM crm";
     mysql_query($sql) or die('error union:' . mysql_error());   
+    mysql_query("DELETE FROM `crm` WHERE 1") or die ('error del:' . mysql_error());
+    $sql="INSERT INTO crm SELECT * FROM t2";
+    mysql_query($sql) or die ('error MERGE:' . mysql_error());
 }
   
 function __destruct(){
