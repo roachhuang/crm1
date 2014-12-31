@@ -29,11 +29,11 @@
         };
 
         factory.deleteRow = function(index){
-            return $http.post('./php/db.php?action=delete_row', {'prod_index': index });
+            return $http.post('./php/db.php?action=delete_row', {'index': index });
         };
 
         factory.editRow = function(index){
-            return $http.post('./php/db.php?action=edit_row', {'prod_index': index});      
+            return $http.post('./php/db.php?action=edit_row', {'index': index});      
         };
 
         factory.updateRow = function(row){   

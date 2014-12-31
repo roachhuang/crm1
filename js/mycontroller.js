@@ -25,7 +25,7 @@
                 $scope.filteredItems = $scope.data.sharingRows.lenght; //init for no filter
                 $scope.totalItems = $scope.data.sharingRows.lenght;
                 //$scope.rows=data;                             
-                console.log(promise.data);          
+                //console.log(promise.data);          
             },
             function(error){
                 console.log('faile to read from db' + error);
@@ -74,10 +74,10 @@
         //$scope.update_prod = true;
         //$scope.add_prod = false;
         dataFactory.editRow(index)     
-        .success(function (data) {    
+        .then(function(promise) {    
             //alert(data[0]["prod_name"]);
             // 2-way data binding
-            $scope.row = data;
+            $scope.row = promise.data;
             /*
             $scope.row.id = data[0];
             $scope.row.inn_name = data[1];
@@ -85,30 +85,15 @@
             $scope.row.fax = data[3];
             $scope.row.addr = data[4];           
             */
-        })
-        .error(function(data, status, headers, config){ 
-            console.log('fail to edit row');
+        },
+        function(error){ 
+            console.log('fail to edit row' + error);
         });
     };
 
     /** function to update row details after edit from list of rows referencing php **/
 
     $scope.update_row = function(row) {
-        /*
-        $http.post('./db.php?action=update_row', 
-                    {
-                     'id': row.prod_id,
-                     'prod_name': row.prod_name,
-                     'prod_desc': row.prod_desc, 
-                     'prod_price': row.prod_price,
-                     'prod_quantity': row.prod_quantity
-                    }).success(function(data, status, headers, config){
-                        console.log('good');
-                    }).
-                    error(function(data, status, headers, config){
-                        console.log('bad');
-                    });
-        */
         if (confirm("Are you sure to update the row?") === true){
             $scope.showAddBtn=true;
             $scope.actionForBox = 'Add a row';
@@ -128,29 +113,12 @@
     // import controller
     app.controller('ImportController', function($scope, dataFactory, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
+        $scope.selectedCity='tainan';	// default city
         $scope.cities =[
-            'Changhua',
-            'Chiayi',
-            'Chiayi City',
-            'Hsinchu',
-            'Hsinchu City',
-            'Hualien',
-            'Kaohsiung',
-            'Keelung',
-            'Kinmen',
-            'Mazu',
-            'Miaoli',
-            'Nantou',
-            'New Taipei City',
-            'Penghu',
-            'Pingtung',
-            'Taichung',
-            'Tainan',
-            'Taipei City',
-            'Taitung',
-            'Taoyuan',
-            'Yilan',
-            'Yunlin'
+            'Changhua', 'Chiayi', 'Chiayi City', 'Hsinchu', 'Hsinchu City', 'Hualien',
+            'Kaohsiung','Keelung','Kinmen','Mazu','Miaoli', 'Nantou','New Taipei City',
+            'Penghu','Pingtung','Taichung', 'Tainan', 'Taipei City', 'Taitung', 'Taoyuan',
+            'Yilan','Yunlin'
         ];
             $scope.importCsv = function(fileName, city){
             /* for security reason browsers don't allow us to get file's full url.*/ 
@@ -169,43 +137,8 @@
             //$scope.data.sharingRows = dataFactory.importCsv();
         };
 
-        $scope.showContent = function($fileContent){
-            $scope.content = $fileContent;
-            dataFactory.csv($scope.content)     //pass csv content to php       
-            .success(function (data, status, headers, config) {
-                console.log(data); 
-            })
-            .error(function(data, status, headers, config){
-            console.log('fail to import csv');
-            });
-        };    
     });    
-    /*  
-    app.controller('importCtrl', function($scope, sharing, $parse){
-        $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-        $scope.csv = {
-                content: null,
-                header: true,
-                separator: ',',
-                result: null
-        };
-
-        var _lastGoodResult = '';
-        $scope.toPrettyJSON = function (objStr, tabWidth) {
-            var obj = null;
-            try {
-                obj = $parse(objStr)({});
-            } catch(e){
-                // eat $parse error
-                return _lastGoodResult;
-            }
-            var result = JSON.stringify(obj, null, Number(tabWidth));
-            _lastGoodResult = result;
-            return result;
-        };
-    });   
-    */
-
+  
     // export controller
     app.controller('ExportController', function($scope, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers

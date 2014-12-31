@@ -49,9 +49,9 @@ function add_row() {
     $prices=$data->prices;
  
     // print_r($data);
-    $qry = 'INSERT INTO crm (inn_name, tel, fax, addr) values ("' . $inn_name . '","' . $tel . '",' .$fax . ','.$addr.')';
+    $sql = 'INSERT INTO crm (inn_name, tel, fax, addr) values ("' . $inn_name . '","' . $tel . '",' .$fax . ','.$addr.')';
    
-    mysql_query($qry) or die('error adding row');    
+    mysql_query($sql) or die('error adding row');    
 };
 
 /**  Function to Get row  **/
@@ -97,7 +97,7 @@ function get_data() {
 
 function delete_row() {
     $data = json_decode(file_get_contents("php://input"));     
-    $index = $data->prod_index;     
+    $index = $data->index;     
     //print_r($data)   ;
     $result = mysql_query("DELETE FROM crm WHERE id = ".$index);
     if($result)
@@ -109,7 +109,7 @@ function delete_row() {
 
 function edit_row() {
     $data = json_decode(file_get_contents("php://input"));     
-    $index = $data->prod_index; 
+    $index = $data->index; 
     $result = mysql_query('SELECT * from crm WHERE id='.$index) or die('error editing');
     $row = array();
     $row = mysql_fetch_assoc($result);  // thus we can get field names from controller
@@ -142,8 +142,8 @@ function update_row(){
             `website`='".$website."', `email`='".$email."', `landlord`='".$landlord."', `prices`='".$prices."'
             WHERE `id`=".$id;
 
-    //$qry = sprintf("UPDATE crm set prod_name=%s, $prod_name=%s, prod_desc=%s, prod_price=%d, prod_quantity=%d WHERE id=%d")  
-    //$qry = "UPDATE crm set prod_name='mark' where id=1";
+    //$sql = sprintf("UPDATE crm set prod_name=%s, $prod_name=%s, prod_desc=%s, prod_price=%d, prod_quantity=%d WHERE id=%d")  
+    //$sql = "UPDATE crm set prod_name='mark' where id=1";
     mysql_query($sql) or die('error updating:' . mysql_error());     
 }
 
