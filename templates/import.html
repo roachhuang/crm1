@@ -17,15 +17,19 @@
 	<div class="form-group">
 		
 		<input type="file" name='fileName' id='fileToUpload'/>
-		<span class="help-block">Select a City from the list.</span>
+         <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+
     </div>
 
     <div class='row'>
 		<div class='form-group col-xs-2'>
         	<label for='sel1'>Select list:</label>
-            <select ng-model='selectedCity' name="cities" class="form-control">
-                <option ng-repeat='city in cities' value='{{city}}'>{{city}}</option>                
-            </select>
+            <input type='text' list='cities' />        
+            
+                <datalist ng-model='selectedCity' name="cities"  id='cities'>
+                    <option ng-repeat='city in cities' value="{{city}}">  
+                </datalist>              
+           
             <span class="help-block">Select a City from the list.</span>
     	</div>
     </div>
