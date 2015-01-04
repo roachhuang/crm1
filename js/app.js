@@ -1,6 +1,6 @@
 (function(){  
     // moudle name in camel case
-    var app = angular.module('crmApp', ['ngRoute', 'myDirective', 'myController', 'myFactory']);    
+    var app = angular.module('crmApp', ['ui.router', 'myDirective', 'myController', 'myFactory', 'ngAnimate']);    
 
     /* variable app is  a variable which used to control the array values to show the data to show in view  using the module name 'app' with arguments as an array */
 
@@ -8,32 +8,37 @@
 
     /* $scope argument passed in function is a key arguments should be passed with exactly the same name */
 
-    app.config(['$routeProvider', function($routeProvider){     
-        $routeProvider.
-        when("/showtable",
-            {           
+    app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){     
+        $urlRouterProvider.otherwise('./showtable.html');
+        $stateProvider
+        .state("showtable",
+            {       
+                url: '/showtable',    
                 controller: 'TblController',
                 templateUrl: "./templates/showtable.html"
             })      
-        .when("/import",
-            {           
+        .state("import",
+            {    
+                url: '/import',       
                 controller: 'ImportController',
                 templateUrl: "./templates/import.html"
             })  
-        .when("/export",
-            {           
+        .state("export",
+            {   
+                url: '/export',        
                 controller: 'ExportController',
                 templateUrl: "./templates/export.html"
             })  
-        .when("/home",
-            {       
+        .state("home",
+            {    
+                url: '/',   
                 templateUrl: "./templates/home.html"
             })  
-        .otherwise({redirectTo: './showtable.html'});            
+                    
     }]);    
 
     /* to be move to app.js for animation*/
-    /*
+    
     app.run(function ($rootScope) {
       $rootScope.$on('$routeChangeSuccess', function(e, current, previous) {
         var direction = current && previous && current.depth < previous.depth;
@@ -44,5 +49,5 @@
         }
       });
     });
-    */
+   
 })();
