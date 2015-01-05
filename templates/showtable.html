@@ -33,7 +33,7 @@
 		</thead>
 
 	<tbody ng-init="get_row()">
-		<tr dir-paginate="row in data.sharingRows
+		<tr ng-animate=" 'animate' " dir-paginate="row in data.sharingRows
 					 | filter:query
 					 | itemsPerPage: pageSize
 					 | orderBy:sortField:reverse" current-page='currentPage'>

@@ -17,9 +17,10 @@
     -->
 	<link rel="stylesheet" href="./css/crm.css" >
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.min.js"></script>
-	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular-animate.js"></script> 
-	-->
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-route.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-animate.js"></script> 
+	
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.13/angular-ui-router.min.js"></script>
+
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-sanitize.js"></script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/ng-csv/0.2.6/ng-csv.min.js'></script>
     
@@ -32,7 +33,7 @@
  	<nav-bar></nav-bar>
 	<!-- place holder for views -->
 	<!-- <div ng-view ng-animate="viewSlideAnimation"></div> -->
-	<div ng-view></div>
+	<div ui-view></div>
 	</div>
 <!-- including the controller file which controlls the data to be presented in html -->
 	<!-- <script src="./js/angular-csv-import.js"></script> --> 

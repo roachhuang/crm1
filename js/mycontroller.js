@@ -113,7 +113,7 @@
     // import controller
     app.controller('ImportController', function($scope, dataFactory, sharing){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-        $scope.selectedCity='tainan';	// default city
+        $scope.selectedCity='Chiayi';	// default city
         $scope.cities =[
             'Changhua', 'Chiayi', 'Chiayi City', 'Hsinchu', 'Hsinchu City', 'Hualien',
             'Kaohsiung','Keelung','Kinmen','Mazu','Miaoli', 'Nantou','New Taipei City',
