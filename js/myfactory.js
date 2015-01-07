@@ -53,7 +53,7 @@
 
         factory.importCsv = function(fileName, city){
             console.log('called factory.importcsv');
-            var fileToUpload = '../test.csv';   // relative to db.php's path
+            var fileToUpload = '../test.tsv';   // relative to db.php's path
             // remember to change this after fixing fileanme issue
             return $http.post('./php/db.php?action=importCsv', {filename: fileToUpload, city: city});               
         };

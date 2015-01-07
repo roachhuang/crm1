@@ -120,7 +120,7 @@
             'Penghu','Pingtung','Taichung', 'Tainan', 'Taipei City', 'Taitung', 'Taoyuan',
             'Yilan','Yunlin'
         ];
-            $scope.importCsv = function(fileName, city){
+        $scope.importCsv = function(fileName, city){
             /* for security reason browsers don't allow us to get file's full url.*/ 
             //console.log($scope.uploadme);
             //path = document.getElementById('myFileInput').value; 
@@ -129,7 +129,8 @@
 
             dataFactory.importCsv(fileName, city)     //pass csv content to php       
             .success(function (data, status, headers, config) {
-                console.log(data); 
+                console.log(data);
+                alert(data);
             })
             .error(function(data, status, headers, config){
                 console.log('fail to import csv');

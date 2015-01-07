@@ -158,9 +158,11 @@ function importCsv(){
     //$fd = fopen($filename, 'r') or die ('error opening csv file');
    
     //while(!feof($fd){ 
-    $csv=[];
+    //$csv=[];
     // import csv into table tmpCrm 
-    $sql = "LOAD DATA LOCAL INFILE '/var/www/html/crm/test.csv' INTO TABLE tmpCrm FIELDS TERMINATED BY ',' IGNORE 1 LINES";
+    $file = '/var/www/html/crm/test.tsv';
+    $sql = "LOAD DATA LOCAL INFILE '{$file}' INTO TABLE tmpCrm FIELDS TERMINATED BY '\t' IGNORE 1 LINES";
+        
     mysql_query($sql) or die('error infile');    
     /*  
     while($csv = fgetcsv($fd, 1000, ","))
