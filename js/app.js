@@ -1,6 +1,7 @@
 (function(){  
     // moudle name in camel case
-    var app = angular.module('crmApp', ['ui.router', 'myDirective', 'myController', 'myFactory', 'ngAnimate']);    
+    var app = angular.module('myApp',
+                     ['ui.router', 'myDirective', 'myController', 'myFactory', 'ngAnimate']);    
 
     /* variable app is  a variable which used to control the array values to show the data to show in view  using the module name 'app' with arguments as an array */
 
