@@ -4,6 +4,11 @@
 	app.controller('TblController', ['$scope', 'dataFactory', 'sharing', function($scope, dataFactory, sharing) {
        //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
        //$scope.rows =  []];
+
+    var vm = $scope;   
+    vm.isPopupVisible = false;      
+    vm.composeEmail = {};   
+
     $scope.actionForBox = 'Add a row';
     $scope.row = [];  
     $scope.pageSize=6; 
@@ -64,8 +69,28 @@
                
             });
         }    
+    };     
+        
+    vm.showPopup = function(email){
+        vm.isPopupVisible = true;
+        vm.selectedEmail = email;
     };
 
+    vm.sendEmail = function(){
+        alert('sent');
+    };
+   
+/*
+    $scope.sendMail = function(){        
+        var link = "mailto:mark.huang@ca-sec.come"
+             + "?cc=giraftw2002@gmail.com"
+             + "&subject=" + escape("This is my subject")
+             + "&body=" + escape(document.getElementById('myText').value);
+
+    window.location.href = link;
+}
+    }
+*/
     /** fucntion to edit row details from list of row referencing php **/
 
     $scope.edit_row = function(index) {
@@ -110,7 +135,7 @@
 
     }]); // end of Crmcontroller
 
-  
+    
   
     // export controller
     app.controller('ExportController', function($scope, sharing){

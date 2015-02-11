@@ -2,15 +2,23 @@
 
     var app = angular.module('myController');     
     // import controller
-    app.controller('ImportController', function($scope, dataFactory, sharing){
-        $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-        $scope.selectedCity='Chiayi';	// default city
-        $scope.cities =[
-            'Changhua', 'Chiayi', 'Chiayi City', 'Hsinchu', 'Hsinchu City', 'Hualien',
-            'Kaohsiung','Keelung','Kinmen','Mazu','Miaoli', 'Nantou','New Taipei City',
-            'Penghu','Pingtung','Taichung', 'Tainan', 'Taipei City', 'Taitung', 'Taoyuan',
-            'Yilan','Yunlin'
-        ];
+    app.controller('ImportController', function($scope, dataFactory, sharing){        
+        sc=$scope;
+        sc.init();
+
+        sc.init = function(){
+            $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
+            $scope.selectedCity='Chiayi';   // default city
+            $scope.cities =[
+                'Changhua', 'Chiayi', 'Chiayi City', 'Hsinchu', 'Hsinchu City', 'Hualien',
+                'Kaohsiung','Keelung','Kinmen','Mazu','Miaoli', 'Nantou','New Taipei City',
+                'Penghu','Pingtung','Taichung', 'Tainan', 'Taipei City', 'Taitung', 'Taoyuan',
+                'Yilan','Yunlin'
+            ];             
+            sc.onApiLoad(); // for google drive            
+        }      
+        
+
         $scope.importCsv = function(fileName, city){
             /* for security reason browsers don't allow us to get file's full url.*/ 
             //console.log($scope.uploadme);

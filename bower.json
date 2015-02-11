@@ -1,0 +1,27 @@
+{
+  "name": "crm",
+  "version": "1.0",
+  "homepage": "https://github.com/roachhuang/crm",
+  "authors": [
+    "test <mark.huang@ca-sec.com>"
+  ],
+  "description": "crm",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.2.16",
+    "bootstrap": "~3.3.2",
+    "ui-bootstrap": "~0.12.0",
+    "angular-bootstrap": "~0.12.0"
+  }
+}

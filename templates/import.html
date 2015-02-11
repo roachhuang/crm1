@@ -24,9 +24,8 @@
     <div class='row'>
 		<div class='form-group col-xs-2'>
         	<label for='sel1'>Select list:</label>
-            <input type='text' list='cities' />        
-            
-                <datalist ng-model='selectedCity' name="cities"  id='cities'>
+            <input type='text' list='cities' />
+                <datalist ng-model='selectedCity' name="cities" id='cities'>
                     <option ng-repeat='city in cities' value="{{city}}">  
                 </datalist>              
            
@@ -35,6 +34,6 @@
     </div>
 
     <div class="form-group">
-		<button class='btn btn-primary' ng-click="importCsv(fileName, selectedCity)"><span class="glyphicon glyphicon-import"></span> Import</button>
+		<button type='button' class='btn btn-primary' ng-click="importCsv(fileName, selectedCity)"><span class="glyphicon glyphicon-import"></span> Import</button>
     </div>
 </form>
