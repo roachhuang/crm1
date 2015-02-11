@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('myController', ['angularUtils.directives.dirPagination', 'ngCsv']);
+	var app = angular.module('myController', ['angularUtils.directives.dirPagination', 'ngSanitize', 'ngCsv']);
 
 	app.controller('TblController', ['$scope', 'dataFactory', 'sharing', function($scope, dataFactory, sharing) {
        //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
