@@ -2,7 +2,7 @@
 
 	<!--  ng-app used to specify the module name used to define what module have to used to show data in view using the controller. if no any module define the controller  than np-app will be blank. -->
 
-<html ng-app="myApp">
+<html ng-app="mainApp">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -76,16 +76,18 @@
           </div>
         </div>
 
-
 <!-- including the controller file which controlls the data to be presented in html -->
 	<!-- <script src="./js/angular-csv-import.js"></script> --> 
-	<script src="./js/myfactory.js"></script>	
-	<script src="./js/mycontroller.js"></script>
+
+  <script src="./js/app.js"></script> 
+  <!-- order matters - ctrl.js has to be after app.js coz it share the same module name as app.js -->
+  <script src="./js/controllers.js"></script>   
+	<script src="./js/factories.js"/>		
 	<script src="./js/importctrl.js"></script>
-	<script src="./js/mydirective.js"></script>
+	<script src="./js/directives.js"></script>
   <script src="./js/EmailController.js"></script>
-  <script src="./js/my-modal-ctrl.js"></script>
+  <script src="./js/services.js"></script>
 	<script src="./js/dirPagination.js"></script>	
-<script src="./js/app.js"></script>		
+ 	
 </body>
 </html>

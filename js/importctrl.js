@@ -1,6 +1,6 @@
 (function(){
 
-    var app = angular.module('myController');     
+    var app = angular.module('mainApp');     
     // import controller
     app.controller('ImportController', function($scope, dataFactory, sharing){        
         sc=$scope;
@@ -15,8 +15,8 @@
                 'Penghu','Pingtung','Taichung', 'Tainan', 'Taipei City', 'Taitung', 'Taoyuan',
                 'Yilan','Yunlin'
             ];             
-            sc.onApiLoad(); // for google drive            
-        }      
+            sc.onApiLoad(); // for google drive           
+        }   
         
 
         $scope.importCsv = function(fileName, city){

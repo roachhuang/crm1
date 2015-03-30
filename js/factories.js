@@ -1,5 +1,5 @@
 (function(){
-	var app = angular.module('myFactory', []);
+	var app = angular.module('mainApp.Factories', []);
 
     app.factory('sharing', function(){
         return {sharingRows: []};    //also binding btw controllers
@@ -25,7 +25,13 @@
             return defer.promise;
             */  
             //var deferred = $q.defer();  // $q service contains the promise we'll return
-            return $http.get("./php/db.php?action=get_data");            
+            return $http.get("./php/db.php?action=get_data"); 
+            /*
+            var promise = $http.get("./php/db.php?action=get_data");
+            promise.success(function (data){
+                return data;        
+            });
+            */
         };
 
         factory.deleteRow = function(index){
