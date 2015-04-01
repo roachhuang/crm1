@@ -1,0 +1,163 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs', '/usr/bin/npm', 'install', '-g', 'yo' ]
+2 info using npm@1.3.10
+3 info using node@v0.10.25
+4 verbose cache add [ 'yo', null ]
+5 verbose cache add name=undefined spec="yo" args=["yo",null]
+6 verbose parsed url { protocol: null,
+6 verbose parsed url   slashes: null,
+6 verbose parsed url   auth: null,
+6 verbose parsed url   host: null,
+6 verbose parsed url   port: null,
+6 verbose parsed url   hostname: null,
+6 verbose parsed url   hash: null,
+6 verbose parsed url   search: null,
+6 verbose parsed url   query: null,
+6 verbose parsed url   pathname: 'yo',
+6 verbose parsed url   path: 'yo',
+6 verbose parsed url   href: 'yo' }
+7 silly lockFile c41975d1-yo yo
+8 verbose lock yo /home/roach/.npm/c41975d1-yo.lock
+9 silly lockFile c41975d1-yo yo
+10 silly lockFile c41975d1-yo yo
+11 verbose addNamed [ 'yo', '' ]
+12 verbose addNamed [ null, '*' ]
+13 silly lockFile d937c28e-yo yo@
+14 verbose lock yo@ /home/roach/.npm/d937c28e-yo.lock
+15 silly addNameRange { name: 'yo', range: '*', hasData: false }
+16 verbose url raw yo
+17 verbose url resolving [ 'https://registry.npmjs.org/', './yo' ]
+18 verbose url resolved https://registry.npmjs.org/yo
+19 info trying registry request attempt 1 at 23:02:52
+20 verbose etag "6IEZETZ7AQIYUV2PGRGB4SK6"
+21 http GET https://registry.npmjs.org/yo
+22 http 304 https://registry.npmjs.org/yo
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Wed, 01 Apr 2015 15:02:52 GMT',
+23 silly registry.get     server: 'Apache',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'last-modified': 'Wed, 01 Apr 2015 15:02:52 GMT',
+23 silly registry.get     'cache-control': 'max-age=60',
+23 silly registry.get     etag: '"6IEZETZ7AQIYUV2PGRGB4SK6"',
+23 silly registry.get     age: '1',
+23 silly registry.get     'x-served-by': 'cache-nrt6131-NRT',
+23 silly registry.get     'x-cache': 'HIT',
+23 silly registry.get     'x-cache-hits': '1',
+23 silly registry.get     'x-timer': 'S1427900572.696395,VS0,VE1',
+23 silly registry.get     vary: 'Accept',
+23 silly registry.get     'content-length': '0',
+23 silly registry.get     'keep-alive': 'timeout=10, max=50',
+23 silly registry.get     connection: 'Keep-Alive' } ]
+24 verbose etag yo from cache
+25 silly addNameRange number 2 { name: 'yo', range: '*', hasData: true }
+26 silly addNameRange versions [ 'yo', [ '1.1.0', '1.1.1', '1.1.2', '1.4.6' ] ]
+27 verbose addNamed [ 'yo', '1.4.6' ]
+28 verbose addNamed [ '1.4.6', '1.4.6' ]
+29 silly lockFile 10fcef76-yo-1-4-6 yo@1.4.6
+30 verbose lock yo@1.4.6 /home/roach/.npm/10fcef76-yo-1-4-6.lock
+31 silly lockFile 10fcef76-yo-1-4-6 yo@1.4.6
+32 silly lockFile 10fcef76-yo-1-4-6 yo@1.4.6
+33 silly lockFile d937c28e-yo yo@
+34 silly lockFile d937c28e-yo yo@
+35 silly resolved [ { name: 'yo',
+35 silly resolved     version: '1.4.6',
+35 silly resolved     description: 'CLI tool for running Yeoman generators',
+35 silly resolved     license: 'BSD',
+35 silly resolved     bin: { yo: 'lib/cli.js' },
+35 silly resolved     author: { name: 'Yeoman team' },
+35 silly resolved     repository: { type: 'git', url: 'git://github.com/yeoman/yo' },
+35 silly resolved     engines: { node: '>=0.10.0', npm: '>=2.1.0' },
+35 silly resolved     scripts:
+35 silly resolved      { test: 'jshint . && mocha test/**/*.js',
+35 silly resolved        postinstall: 'yodoctor',
+35 silly resolved        postupdate: 'yodoctor',
+35 silly resolved        prepublish: 'nsp audit-package' },
+35 silly resolved     files: [ 'lib' ],
+35 silly resolved     keywords:
+35 silly resolved      [ 'cli-app',
+35 silly resolved        'cli',
+35 silly resolved        'bin',
+35 silly resolved        'front-end',
+35 silly resolved        'development',
+35 silly resolved        'dev',
+35 silly resolved        'build',
+35 silly resolved        'web',
+35 silly resolved        'tool',
+35 silly resolved        'scaffold',
+35 silly resolved        'stack',
+35 silly resolved        'yeoman',
+35 silly resolved        'generator',
+35 silly resolved        'generate',
+35 silly resolved        'app',
+35 silly resolved        'boilerplate' ],
+35 silly resolved     dependencies:
+35 silly resolved      { 'array-uniq': '^1.0.2',
+35 silly resolved        async: '^0.9.0',
+35 silly resolved        chalk: '^1.0.0',
+35 silly resolved        configstore: '^0.3.1',
+35 silly resolved        'cross-spawn': '^0.2.3',
+35 silly resolved        figures: '^1.3.5',
+35 silly resolved        findup: '^0.1.5',
+35 silly resolved        fullname: '^1.0.0',
+35 silly resolved        got: '^2.4.0',
+35 silly resolved        'humanize-string': '^1.0.0',
+35 silly resolved        inquirer: '^0.8.0',
+35 silly resolved        insight: '^0.5.0',
+35 silly resolved        lodash: '^3.2.0',
+35 silly resolved        meow: '^3.0.0',
+35 silly resolved        'npm-keyword': '^1.1.1',
+35 silly resolved        opn: '^1.0.0',
+35 silly resolved        'package-json': '^1.1.0',
+35 silly resolved        'root-check': '^1.0.0',
+35 silly resolved        'sort-on': '^1.0.0',
+35 silly resolved        'string-length': '^1.0.0',
+35 silly resolved        titleize: '^1.0.0',
+35 silly resolved        'update-notifier': '^0.3.0',
+35 silly resolved        'user-home': '^1.1.0',
+35 silly resolved        'yeoman-character': '^1.0.0',
+35 silly resolved        'yeoman-doctor': '^1.0.0',
+35 silly resolved        'yeoman-environment': '^1.0.1',
+35 silly resolved        yosay: '^1.0.0' },
+35 silly resolved     devDependencies:
+35 silly resolved      { jshint: '^2.5.11',
+35 silly resolved        mocha: '^2.1.0',
+35 silly resolved        mockery: '^1.4.0',
+35 silly resolved        nock: '^0.59.1',
+35 silly resolved        nsp: '*',
+35 silly resolved        proxyquire: '^1.0.1',
+35 silly resolved        'registry-url': '^3.0.0',
+35 silly resolved        sinon: '^1.12.1' },
+35 silly resolved     preferGlobal: true,
+35 silly resolved     readme: '▂▂╱▔▔▔▔▔▔▔▔▔▔╲  \n╲▂┈╭╮╱╱╭┳━━━╮▕  \n┈┈▏┃╰╮╭╯┃╭━╮┃▕  \n┈┈▏╰╮╰╯╭┫┃╱┃┃▕  \n┈┈▏╱╰╮╭╯┃┃╱┃┃▕  \n┈┈▏╱╱┃┃╱┃╰━╯┃▕  \n┈┈▏╱╱╰╯╱╰━━━╯▕  \n┈┈╲▂▂▂▂▂▂▂▂▂▂╱\n\n\n[![Build Status](https://travis-ci.org/yeoman/yo.svg?branch=master)](https://travis-ci.org/yeoman/yo) ![](http://img.shields.io/badge/unicorn-approved-ff69b4.svg)\n\n> CLI tool for running Yeoman [generators](http://yeoman.io/generators/)\n\n<img src="screenshot.png" width="569">\n\n\n## [Documentation](https://github.com/yeoman/yeoman/wiki)\n\n\n## Options\n\n- `--no-color` flag to disable colors.\n- `--version` Print the current `yo` version.\n- `--help` Print `yo` help menu with the list of found generators\n- `--[no-]insight` to toggle anonymous [Insight](https://github.com/yeoman/insight) tracking which helps us improve Yeoman. Using either of these flags on the first run will prevent you from being prompted about it interactively. The flags can also be used to change it later on.\n- `--generators` will output the available generators\n\n\n## Troubleshooting\n\nRunning `yo doctor` command can help you troubleshoot common issues.\n\nIf `doctor` doesn\'t help, then check opened issues for a similar problem. Open a new issue if your problem haven\'t been reported yet. Make sure to always include the version of `yo` (`yo --version`) and Node.js (`node --version`) you use.\n\nIf your issue only occur using a generator, please report the issues on the generator\'s repository.\n\n\n## Contribute\n\nSee the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contributing.md).\n\n\n## Changelog\n\nSee the [release page](https://github.com/yeoman/yo/releases).\n\n\n## License\n\n[BSD license](http://opensource.org/licenses/bsd-license.php) and copyright Google.\n',
+35 silly resolved     readmeFilename: 'readme.md',
+35 silly resolved     bugs: { url: 'https://github.com/yeoman/yo/issues' },
+35 silly resolved     _id: 'yo@1.4.6',
+35 silly resolved     _from: 'yo@' } ]
+36 info install yo@1.4.6 into /usr/local/lib
+37 info installOne yo@1.4.6
+38 warn engine yo@1.4.6: wanted: {"node":">=0.10.0","npm":">=2.1.0"} (current: {"node":"v0.10.25","npm":"1.3.10"})
+39 info /usr/local/lib/node_modules/yo unbuild
+40 info preuninstall yo@1.4.6
+41 info uninstall yo@1.4.6
+42 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild yo@1.4.6
+43 verbose /usr/local/bin,[object Object] binRoot
+44 info /usr/local/lib/node_modules/yo unbuild
+45 info preuninstall yo@1.4.6
+46 info uninstall yo@1.4.6
+47 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild yo@1.4.6
+48 verbose /usr/local/bin,[object Object] binRoot
+49 error error rolling back Error: EACCES, unlink '/usr/local/bin/yo'
+49 error error rolling back  yo@1.4.6 { [Error: EACCES, unlink '/usr/local/bin/yo'] errno: 3, code: 'EACCES', path: '/usr/local/bin/yo' }
+50 error Error: EACCES, unlink '/usr/local/bin/yo'
+50 error  { [Error: EACCES, unlink '/usr/local/bin/yo'] errno: 3, code: 'EACCES', path: '/usr/local/bin/yo' }
+51 error Please try running this command again as root/Administrator.
+52 error System Linux 3.13.0-43-generic
+53 error command "/usr/bin/nodejs" "/usr/bin/npm" "install" "-g" "yo"
+54 error cwd /var/www/html/crm
+55 error node -v v0.10.25
+56 error npm -v 1.3.10
+57 error path /usr/local/bin/yo
+58 error code EACCES
+59 error errno 3
+60 error stack Error: EACCES, unlink '/usr/local/bin/yo'
+61 verbose exit [ 3, true ]

@@ -23,3 +23,22 @@
   top: -50px;
   height: 0px;
 }
+
+.navbar-default {
+    background-color: #b7d1c4;
+}
+
+.footer {
+  clear:both;
+  margin-top: 15px;
+  font-size: .8em;  
+  padding: 10px 10px 30px 10px;
+  /* color #5 */
+  background-color: #046380;
+  color: white;
+  text-align:center;
+}
+
+.footer a {
+  color: white; 
+}
