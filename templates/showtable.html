@@ -37,11 +37,11 @@
 			<th><a ng-click="sortField ='tel'; reverse = sortField == 'tel' && !reverse"><i class="icon-sort"></i>Tel</a></th>
 			<th><a ng-click="sortField ='fax'; reverse = sortField == 'fax'&&!reverse"><i class="icon-sort"></i>Fax</a></th>
 			<th>Mobile</th>
-<<<<<<< HEAD
+
 			<th>Addr<a ng-click="sortField ='addr'; reverse = sortField == 'addr'&&!reverse"><i class="icon-sort"></th>
-=======
+<!--
 			<th>Addr<a ng-click="sortField ='addr'; reverse = !reverse"><i class="icon-sort"></i></a></th>
->>>>>>> ba6aa7ad6a08d5be17b8ec67bb708e19afaeae70
+-->
 			<th>Eng Addr</th>
 			<th>Jpn Addr</th>	 
 			<th>Status</th>			
@@ -87,8 +87,11 @@
 			<td>{{ row.remodel_date }}</td>
 			<td>
 			<button type='button' class="btn btn-xs btn-success" ng-click="edit_row(row.id)"><span class="glyphicon glyphicon-pencil"></span> Edit&nbsp;&nbsp;&nbsp;&nbsp;</button>
-			<button type='button' class="btn btn-xs btn-danger" ng-click='delete_row(row.id)'><span class="glyphicon glyphicon-trash"></span> Delete</button> 
-			<button type='button' class="btn btn-xs btn-info" ng-click='modalService.showModal()'><span class="glyphicon glyphicon-envelope"></span> Email</button> 
+			<button type='button' class="btn btn-xs btn-danger" ng-click='delete_row(row.id)'
+			confirm-button-text='Delete'
+			cancel-button-text='Cancel'><span class="glyphicon glyphicon-trash"></span> Delete</button> 
+			<button type='button' class="btn btn-xs btn-info" ng-click='xModal()'><span class="glyphicon glyphicon-envelope"></span> Email</button> 
+
 			<!--
 			<a href="" ng-click="prod_edit(row.id)">Edit</a> | <a href="" ng-click="prod_delete(row.id)">Delete</a>
 			-->
