@@ -2,15 +2,16 @@
 	// angular.module('myApp', ['angularUtils.directives.dirPagination', 'ngCsv']).controller('TblController', ['$scope', 'dataFactory', 'sharing', function($scope, dataFactory, sharing) {
        //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
        //$scope.rows =  []];
+    // the same module as mainApp
     var app = angular.module('mainApp');
-    app.controller('TblController', function($scope, dataFactory, sharing){   
+    app.controller('TblController', function($scope, dataFactory, sharing, modalService){   
         var vm = $scope;   
         vm.isPopupVisible = false;      
         vm.composeEmail = {};   
 
         vm.actionForBox = 'Add a row';
         vm.row = [];  
-        vm.pageSize=6; 
+        vm.pageSize=3; 
         //$scope.currentPage=1;
         vm.reverse = false;
         vm.sortField = 'inn_name';
@@ -58,7 +59,7 @@
         /** function to delete row from list of row referencing php **/
 
         vm.delete_row = function(index) { 
-            if (confirm("Are you sure to delete the row?") === true){ 
+            //if (confirm("Are you sure to delete the row?") === true){ 
                 dataFactory.deleteRow(index)      
                     .success(function (data, status, headers, config) {    
                        vm.get_row();
@@ -66,7 +67,7 @@
                 .error(function(data, status, headers, config){
                    
                 });
-            }    
+            //}    
         };     
             
         vm.showPopup = function(email){
@@ -131,6 +132,19 @@
             vm.row=[];
         };
 
+        vm.xModal = function () {
+            var modalOptions = {};
+            /*
+                closeButtonText: 'Cancel',
+                actionButtonText: 'Delete Customer',
+                headerText: 'good',
+                bodyText: 'Are you sure you want to delete this customer?'
+            };
+            */
+            modalService.showModal({}, {}).then(function (result) {
+                console.log(result);                
+            });
+        };
     });  // end of Crmcontroller  
           
     // export controller

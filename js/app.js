@@ -3,9 +3,10 @@
     var app = angular.module('mainApp',
                     [  'ui.router',
                        'mainApp.Directives', 'mainApp.Factories',
+                       'mainApp.Services',
                        'angularUtils.directives.dirPagination', 
                        // 'ngAnimate',
-                       'ui.bootstrap',                       
+                       //'ui.bootstrap',                       
                     ]);    
 
     /* variable app is  a variable which used to control the array values to show the data to show in view  using the module name 'app' with arguments as an array */
