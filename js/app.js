@@ -34,13 +34,14 @@
             {       
                 url: '/showtable',    
                 controller: 'TblController',
-                templateUrl: "./templates/showtable.html"
+                // table view or editor view
+                templateUrl: "./templates/showtable.html"               
             })                   
         .state("home",
             {    
                 url: '/',   
                 templateUrl: "./templates/home.html"
             })  
-                    
+                   
     }]); 
 })();
