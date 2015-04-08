@@ -69,12 +69,7 @@
                 });
             //}    
         };     
-            
-        vm.showPopup = function(email){
-            vm.isPopupVisible = true;
-            vm.selectedEmail = email;
-        };
-
+ 
         vm.sendEmail = function(){
             alert('sent');
         };
@@ -132,16 +127,8 @@
             vm.row=[];
         };
 
-        vm.xModal = function () {
-            var modalOptions = {};
-            /*
-                closeButtonText: 'Cancel',
-                actionButtonText: 'Delete Customer',
-                headerText: 'good',
-                bodyText: 'Are you sure you want to delete this customer?'
-            };
-            */
-            modalService.showModal({}, {}).then(function (result) {
+        vm.xModal = function () {            
+            modalService.showModal().then(function (result) {
                 console.log(result);                
             });
         };
