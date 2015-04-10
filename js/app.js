@@ -3,7 +3,7 @@
     var app = angular.module('mainApp',
                     [  'ui.router',
                        'mainApp.Directives', 'mainApp.Factories', 'mainApp.Services',
-                       'angularUtils.directives.dirPagination', 
+                       'angularUtils.directives.dirPagination', 'ngCsv',
                        'ngAnimate',
                        //'ui.bootstrap',                       
                     ]);    
@@ -27,7 +27,7 @@
         .state("export",
             {   
                 url: '/export',        
-                controller: 'ExportController',
+                //controller: 'ExportController',
                 templateUrl: "./templates/export.html"
             }) 
         .state("showtable",

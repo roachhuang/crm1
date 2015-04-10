@@ -12,13 +12,11 @@
     </div>
 </div>
 -->
-
+<div class='well'>
 <form class='form'>
-	<div class="form-group">
-		
-		<input type="file" name='fileName' id='fileToUpload'/>
-         <span class="glyphicon glyphicon-ok form-control-feedback"></span>
-
+	<div class="form-group">		
+		<input type="file" name='fileName' id='fileToUpload'>
+        
     </div>
 
     <div class='row'>
@@ -26,10 +24,10 @@
         	<label for='sel1'>Select list:</label>
             <input type='text' list='cities' />
                 <datalist ng-model='selectedCity' name="cities" id='cities'>
-                    <option ng-repeat='city in cities' value="{{city}}">  
+                    <option ng-repeat='city in cities' value="{{city}}"></option> 
                 </datalist>              
            
-            <span class="help-block">Select a City from the list.</span>
+            <span class="help-block">Select a City from the list</span>
     	</div>
     </div>
 
@@ -37,3 +35,4 @@
 		<button type='button' class='btn btn-primary' ng-click="importCsv(fileName, selectedCity)"><span class="glyphicon glyphicon-import"></span> Import</button>
     </div>
 </form>
+</div>

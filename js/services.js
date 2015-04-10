@@ -19,15 +19,15 @@
         }
     };
     
-    var LgModal = function($modal) {
+    var SmallModal = function($modal) {
         this.modal = $modal;        
-        this.options.backdrop = false;        
+        //this.options.backdrop = false;        
         //BaseModal.call(this);
     }; // constructor   
-    LgModal.$inject = ['$modal'];
-    LgModal.prototype = new BaseModal();
-    LgModal.prototype.constructor = LgModal;
-    LgModal.prototype.options.size = 'sm';
+    SmallModal.$inject = ['$modal'];
+    SmallModal.prototype = new BaseModal();
+    SmallModal.prototype.constructor = SmallModal;
+    SmallModal.prototype.options.size = 'sm';
 
     //BaseModal.$inject = ['$modal'];
     /*    
@@ -36,6 +36,6 @@
     MyModal.prototype.constructor = MyModal;   
     */
     // here modalService = new MyModal();
-    app.service('modalService', LgModal);   
+    app.service('modalService', SmallModal);   
 
 })();

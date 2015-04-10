@@ -4,7 +4,12 @@
        //$scope.rows =  []];
     // the same module as mainApp
     var app = angular.module('mainApp');
-    app.controller('TblController', function($scope, dataFactory, sharing, modalService){   
+    // main controller
+    app.controller('mainCtrl', function($scope){
+        $scope.data = {}; // using controller inheritance
+    });
+
+    app.controller('TblController', function($scope, dataFactory, modalService){   
         var vm = $scope;   
         vm.isPopupVisible = false;      
         vm.composeEmail = {};   
@@ -20,14 +25,14 @@
         /** function to get detail of row added in mysql referencing php **/
         // remember to change success to then for all functions later when i have time
         vm.get_row = function() {
-            $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
+            //vm.data = {}; // sharing $scope.data.sharingRows btw controllers
         //    $scope.data.sharingRows = dataFactory.getData();      
             dataFactory.getData().then(function(response){
-                    $scope.data.sharingRows=response.data;  
-                    $scope.currentPage =1;
-                    $scope.pageSize = 5; // max no of rows displaying in a page
-                    $scope.filteredItems = $scope.data.sharingRows.lenght; //init for no filter
-                    $scope.totalItems = $scope.data.sharingRows.lenght;
+                    vm.data.products=response.data;  
+                    vm.currentPage =1;
+                    vm.pageSize = 5; // max no of rows displaying in a page
+                    vm.filteredItems = vm.data.products.lenght; //init for no filter
+                    vm.totalItems = vm.data.products.lenght;
                     //$scope.rows=data;                             
                     //console.log(promise.data);          
                 },
@@ -39,7 +44,7 @@
         /** function to add details for rows in mysql referecing php **/
 
         vm.add_row = function(row) {
-            if (confirm("Are you sure to add the row?") === true){
+            if (vm.xModal() === true){
                 dataFactory.submit(row)       
                 .success(function (data, status, headers, config) {
                 vm.get_row(); 
@@ -59,15 +64,12 @@
         /** function to delete row from list of row referencing php **/
 
         vm.delete_row = function(index) { 
-            //if (confirm("Are you sure to delete the row?") === true){ 
+            modalService.showModal().then(function(result){ 
                 dataFactory.deleteRow(index)      
                     .success(function (data, status, headers, config) {    
                        vm.get_row();
-                })
-                .error(function(data, status, headers, config){
-                   
-                });
-            //}    
+                });         
+            });    
         };     
  
         vm.sendEmail = function(){
@@ -129,13 +131,16 @@
 
         vm.xModal = function () {            
             modalService.showModal().then(function (result) {
-                console.log(result);                
+                console.log(result);             
+                return true;    // ok         
             });
         };
+            
     });  // end of Crmcontroller  
-          
+    /*      
     // export controller
-    app.controller('ExportController', function($scope, sharing){
+    app.controller('ExportController', function($scope){
         $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
     });
+    */
 })();

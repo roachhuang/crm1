@@ -34,14 +34,14 @@
   </style>
 </head>
 
-<body>	 
+<body ng-controller='mainCtrl'>	 
   <div class="container">
  	  <nav-bar></nav-bar>
  	</div>
 	<!-- place holder for views -->
 	<!-- <div ng-view ng-animate="viewSlideAnimation"></div> -->
 	<div class='container'>
-	  <div ui-view class='ngFade'></div>
+	  <div ui-view ng-animate="'view'" class='ngFade'></div>
 	</div>
 	
 	<div class='footer'>
@@ -80,12 +80,13 @@
             <p>Blasting Off With Bootstrap &copy;2214.</p>
           </div>
         </div>
-
+      </div>  
 <!-- including the controller file which controlls the data to be presented in html -->
 	<!-- <script src="./js/angular-csv-import.js"></script> --> 
 
   <script src="./js/app.js"></script> 
   <!-- order matters - ctrl.js has to be after app.js coz it share the same module name as app.js -->
+  <script src="./js/importctrl.js"></script>
   <script src="./js/controllers.js"></script>   
 	<script src="./js/factories.js"/>		
 	<script src="./js/importctrl.js"></script>

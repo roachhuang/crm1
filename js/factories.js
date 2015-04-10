@@ -1,11 +1,12 @@
 (function(){
 	var app = angular.module('mainApp.Factories', []);
-
+/*
     app.factory('sharing', function(){
         return {sharingRows: []};    //also binding btw controllers
     });
-
-	app.factory('dataFactory', ['$http', '$q', function($http, $q){
+*/
+    app.constant("dataUrl", "./php/db.php/?action=");
+	app.factory('dataFactory', ['dataUrl', '$http', '$q', function(dataUrl, $http, $q){
         // import csv file
         var factory = {};   
         
@@ -25,7 +26,7 @@
             return defer.promise;
             */  
             //var deferred = $q.defer();  // $q service contains the promise we'll return
-            return $http.get("./php/db.php?action=get_data"); 
+            return $http.get(dataUrl + "get_data"); 
             /*
             var promise = $http.get("./php/db.php?action=get_data");
             promise.success(function (data){
@@ -35,19 +36,19 @@
         };
 
         factory.deleteRow = function(index){
-            return $http.post('./php/db.php?action=delete_row', {'index': index });
+            return $http.post(dataUrl + 'delete_row', {'index': index });
         };
 
         factory.editRow = function(index){
-            return $http.post('./php/db.php?action=edit_row', {'index': index});      
+            return $http.post(dataUrl + 'edit_row', {'index': index});      
         };
 
         factory.updateRow = function(row){   
-            return $http.post('./php/db.php?action=update_row',  row);    
+            return $http.post(dataUrl + 'update_row',  row);    
         };  
 
         factory.submit = function(row){
-            return $http.post('./php/db.php?action=add_row', 
+            return $http.post(dataUrl + 'add_row', 
                 {
                 prod_name: row.prod_name,
                 prod_desc: row.prod_desc, 
@@ -61,7 +62,7 @@
             console.log('called factory.importcsv');
             var fileToUpload = '../test.tsv';   // relative to db.php's path
             // remember to change this after fixing fileanme issue
-            return $http.post('./php/db.php?action=importCsv', {filename: fileToUpload, city: city});               
+            return $http.post(dataUrl + 'importCsv', {filename: fileToUpload, city: city});               
         };
 
         return factory; // return an object
