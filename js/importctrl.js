@@ -1,10 +1,10 @@
 (function(){
     var app = angular.module('mainApp');     
     // import controller
-    app.controller('ImportController', function($scope, dataFactory){      
-        //$scope.init();
+    app.controller('ImportController', function($scope, dataFactory){     
 
-        //$scope.init = function() {
+        // private function, no $scope.init is required. 
+        var init = function() {
             //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
             $scope.selectedCity='Chiayi';   // default city
             $scope.cities =[
@@ -14,8 +14,9 @@
                 'Yilan','Yunlin'
             ];             
             //$scope.onApiLoad(); // for google drive           
-        //}; 
+        }; 
         
+        init(); // won't be called outside of the controller
 
         $scope.importCsv = function(fileName, city){
             /* for security reason browsers don't allow us to get file's full url.*/ 

@@ -1,4 +1,4 @@
-(function(){  
+(function(){     
     // moudle name in camel case
     var app = angular.module('mainApp',
                     [  'ui.router',
@@ -13,6 +13,7 @@
     /* Initialize the controller by name 'PhoneListCtrl' holds the information of phone in form of array with keys name, snipper, price , quantity */
 
     /* $scope argument passed in function is a key arguments should be passed with exactly the same name */
+    
 
     app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){     
         $urlRouterProvider.otherwise('./showtable.html');
@@ -34,8 +35,11 @@
             {       
                 url: '/showtable',    
                 controller: 'TblController',
-                // table view or editor view
-                templateUrl: "./templates/showtable.html"               
+                // table view or editor view               
+                template: function(){
+                    // the id is defined in index.html
+                    return angular.element(document.querySelector("#tableTemplate")).html();
+                }            
             })                   
         .state("home",
             {    

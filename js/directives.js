@@ -1,24 +1,12 @@
 (function(){
 var app = angular.module('mainApp.Directives', []);
 
-var templateDir = './templates/';
+app.constant("templateDir", "./templates/");
 
-app.directive('searchBox', function(){
-	return{
-		restrict: 'E',
-		templateUrl: templateDir + 'searchbox.html'
-	}
-});
-app.directive('inputBox', function(){
-	return{
-		restrict: 'E',
-		templateUrl: templateDir + 'inputbox.html'
-	}
-});
 app.directive('navBar', function(){
-	return{
+	return {
 		restrict: 'E',
-		templateUrl: templateDir + 'navbar.html'
+		templateUrl: './templates/navbar.html'
 	}
 });
 /*

@@ -94,6 +94,9 @@
   <script src="./js/EmailController.js"></script>
   <script src="./js/services.js"></script>
 	<script src="./js/dirPagination.js"></script>	
- 	
+ 	<script type='text/ng-template' id='tableTemplate'>
+        <ng-include src="'./templates/tableview.html'" ng-show="displayMode == 'list'"></ng-include>
+        <ng-include src="'./templates/editorview.html'" ng-show="displayMode == 'edit'"></ng-include>
+  </script>
 </body>
 </html>

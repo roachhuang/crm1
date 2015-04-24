@@ -1,4 +1,5 @@
 (function(){
+    'use strict';
 	// angular.module('myApp', ['angularUtils.directives.dirPagination', 'ngCsv']).controller('TblController', ['$scope', 'dataFactory', 'sharing', function($scope, dataFactory, sharing) {
        //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
        //$scope.rows =  []];
@@ -10,7 +11,8 @@
     });
 
     app.controller('TblController', function($scope, dataFactory, modalService){   
-        var vm = $scope;   
+        var vm = $scope; 
+        vm.displayMode ='list';
         vm.isPopupVisible = false;      
         vm.composeEmail = {};   
 
@@ -35,8 +37,7 @@
                     vm.totalItems = vm.data.products.lenght;
                     //$scope.rows=data;                             
                     //console.log(promise.data);          
-                },
-                function(error){
+                }, function(error){
                     console.log('faile to read from db' + error);
                 });                      
         };
@@ -45,14 +46,13 @@
 
         vm.add_row = function(row) {
             if (vm.xModal() === true){
-                dataFactory.submit(row)       
-                .success(function (data, status, headers, config) {
-                vm.get_row(); 
-                })
-                .error(function(data, status, headers, config){
-                console.log('fail to add a row')
+                dataFactory.submit(row).then(function (response) {
+                    vm.get_row(); 
+                }, function(error){                    
+                    console.log('fail to add a row')
                 });
             }    
+            vm.displayMode='list';
             vm.row =[];     // clear inputbox
         };
 
@@ -60,6 +60,7 @@
             vm.row =[];
             vm.showAddBtn = true;
             vm.actionForBox = 'Add a row';
+            vm.displayMode='list';
         };
         /** function to delete row from list of row referencing php **/
 
@@ -90,6 +91,7 @@
         /** fucntion to edit row details from list of row referencing php **/
 
         vm.edit_row = function(index) {
+            vm.displayMode='edit';
            vm.showAddBtn = false;
            vm.actionForBox = 'Edit the row';  
             //vm.update_prod = true;
@@ -127,6 +129,7 @@
                     });       
             }        
             vm.row=[];
+            vm.displayMode='list';
         };
 
         vm.xModal = function () {            
