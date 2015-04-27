@@ -1,7 +1,7 @@
 (function(){
     var app = angular.module('mainApp.Services', ['ui.bootstrap']);
     // Constrcutor
-    
+
     var BaseModal = function($modal){ 
         this.modal = $modal;
         this.options = {
@@ -42,6 +42,6 @@
     MyModal.prototype.constructor = MyModal;   
     */
     // here modalService = new smallModal();
-    app.service('modalService', SmallModal);   
+    app.service('modalService', SmallModal);  
 
 })();

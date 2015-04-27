@@ -5,6 +5,7 @@
                        'mainApp.Directives', 'mainApp.Factories', 'mainApp.Services',
                        'angularUtils.directives.dirPagination', 'ngCsv',
                        'ngAnimate',
+
                        //'ui.bootstrap',                       
                     ]);    
 

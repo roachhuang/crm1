@@ -5,6 +5,7 @@
        //$scope.rows =  []];
     // the same module as mainApp
     var app = angular.module('mainApp');
+
     // main controller
     app.controller('mainCtrl', function($scope){
         $scope.data = {}; // using controller inheritance
@@ -13,6 +14,7 @@
     app.controller('TblController', function($scope, dataFactory, modalService){   
         var vm = $scope; 
         vm.displayMode ='list';
+
         vm.isPopupVisible = false;      
         vm.composeEmail = {};   
 
@@ -65,12 +67,14 @@
         /** function to delete row from list of row referencing php **/
 
         vm.delete_row = function(index) { 
+
             modalService.showModal().then(function(result){ 
                 dataFactory.deleteRow(index)      
                     .success(function (data, status, headers, config) {    
                        vm.get_row();
                 });         
             });    
+
         };     
  
         vm.sendEmail = function(){
@@ -137,8 +141,8 @@
                 console.log(result);             
                 return true;    // ok         
             });
-        };
-            
+        };            
+
     });  // end of Crmcontroller  
     /*      
     // export controller
