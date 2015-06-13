@@ -1,10 +1,18 @@
 (function(){     
     // moudle name in camel case
-    var app = angular.module('mainApp',
-                    [  'ui.router',
-                       'mainApp.Directives', 'mainApp.Factories', 'mainApp.Services',
-                       'angularUtils.directives.dirPagination', 'ngCsv',
-                       'ngAnimate',
+    var app = angular.module('app',
+                    [
+                        'ui.router',
+                        /* 
+                         * Everybody has access to these.
+                        */    
+                        'app.Directives',
+                        'app.core',
+
+                        'app.Services',
+
+                        'angularUtils.directives.dirPagination', 'ngCsv',
+                        'ngAnimate',
 
                        //'ui.bootstrap',                       
                     ]);    
