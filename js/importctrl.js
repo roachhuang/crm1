@@ -1,5 +1,5 @@
 (function(){
-    var app = angular.module('mainApp');     
+    var app = angular.module('app');     
     // import controller
     app.controller('ImportController', function($scope, dataFactory){     
 

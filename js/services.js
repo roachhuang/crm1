@@ -1,5 +1,5 @@
 (function(){
-    var app = angular.module('mainApp.Services', ['ui.bootstrap']);
+    var app = angular.module('app.services', ['ui.bootstrap']);
     // Constrcutor
 
     var BaseModal = function($modal){ 

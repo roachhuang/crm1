@@ -4,7 +4,7 @@
        //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
        //$scope.rows =  []];
     // the same module as mainApp
-    var app = angular.module('mainApp');
+    var app = angular.module('app');
 
     // main controller
     app.controller('mainCtrl', function($scope){

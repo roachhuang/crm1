@@ -1,7 +1,7 @@
 (function(){
-    var core = angular.module('app.core');
-    core.constant("templates", "../templates/");	
-	core.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){     
+    angular.module('app.core')
+    .constant("templates", "../templates/")	
+	.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){     
         $urlRouterProvider.otherwise('./showtable.html');
         $stateProvider
         
@@ -9,13 +9,13 @@
             {    
                 url: '/import',       
                 controller: 'ImportController',
-                templateUrl: templates + "import.html"
+                templateUrl: this.templates + "import.html"
             })  
         .state("export",
             {   
                 url: '/export',        
                 //controller: 'ExportController',
-                templateUrl: templates + "export.html"
+                templateUrl: this.templates + "export.html"
             }) 
         .state("showtable",
             {       
@@ -30,7 +30,7 @@
         .state("home",
             {    
                 url: '/',   
-                templateUrl: templates + "home.html"
+                templateUrl: this.templates + "home.html"
             })  
                    
     }]);

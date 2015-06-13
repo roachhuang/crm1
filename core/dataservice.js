@@ -1,11 +1,13 @@
 (function(){
-	var core = angular.module('app.core');
+	angular
+       .module('app.core')
+	   .constant("dataUrl", "../php/db.php/?action=")
+	   .factory('dataFactory', dataFactory);
+       
+    // seprate injection - clean code    
+    dataFactory.$inject = ['dataUrl', '$http'];
 
-	core.constant("dataUrl", "../php/db.php/?action=");
-	core.factory('dataFactory', ['dataUrl', '$http', '$q', function(dataUrl, $http, $q){
-        // import csv file
-
-        //var factory = {
+    function dataFactory(dataUrl, $http) {        //var factory = {
         //    dataUrl: "../php/db.php/?action="
         //};   // factory is an object 
         
@@ -65,7 +67,7 @@
         };
 
         return factory; // return an object
-    }]);
+    };
 
 })();
 

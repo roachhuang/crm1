@@ -1,5 +1,5 @@
 (function(){
-var app = angular.module('mainApp.Directives', []);
+var app = angular.module('app.directives', []);
 
 app.constant("templateDir", "./templates/");
 
