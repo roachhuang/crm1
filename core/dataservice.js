@@ -1,17 +1,13 @@
 (function(){
-	var app = angular.module('mainApp.Factories', []);
-/*
-    app.factory('sharing', function(){
-        return {sharingRows: []};    //also binding btw controllers
-    });
-*/
-    app.constant("dataUrl", "./php/db.php/?action=");
-	app.factory('dataFactory', ['dataUrl', '$http', '$q', function(dataUrl, $http, $q){
+	var core = angular.module('app.core');
+
+	core.constant("dataUrl", "../php/db.php/?action=");
+	core.factory('dataFactory', ['dataUrl', '$http', '$q', function(dataUrl, $http, $q){
         // import csv file
 
-        var factory = {
-            dataUrl: "./php/db.php/?action="
-        };   // factory is an object 
+        //var factory = {
+        //    dataUrl: "../php/db.php/?action="
+        //};   // factory is an object 
         
         // read CRM table from asiayo database
         factory.getData = function(){
