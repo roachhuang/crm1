@@ -8,7 +8,7 @@
 			/*
 			 * 3rd party modules
 			*/
-			'ui.router'
+			'ui.router', 'ui.bootstrap'
 	]);
   
 })();

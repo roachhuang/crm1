@@ -1,14 +1,6 @@
 (function(){
-var app = angular.module('app.directives', []);
+    angular.module('app.widget', []);
 
-app.constant("templateDir", "./templates/");
-
-app.directive('navBar', function(){
-	return {
-		restrict: 'E',
-		templateUrl: './templates/navbar.html'
-	}
-});
 /*
 app.directive('onReadFile', function ($parse) {
 	return {

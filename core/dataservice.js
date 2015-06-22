@@ -1,4 +1,5 @@
 (function(){
+    'use strict'
 	angular
        .module('app.core')
 	   .constant("dataUrl", "../php/db.php/?action=")
@@ -7,9 +8,10 @@
     // seprate injection - clean code    
     dataFactory.$inject = ['dataUrl', '$http'];
 
-    function dataFactory(dataUrl, $http) {        //var factory = {
-        //    dataUrl: "../php/db.php/?action="
-        //};   // factory is an object 
+    function dataFactory(dataUrl, $http) {        
+        var factory = {
+            // dataUrl: "../php/db.php/?action="
+        };  // factory is an object 
         
         // read CRM table from asiayo database
         factory.getData = function(){

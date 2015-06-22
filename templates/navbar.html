@@ -1,15 +1,14 @@
-<div class = 'navbar navbar-default navbar-static-top'>
-	<div class='container'>
-		<div class='navbar-header'>
-			<a href='#' class='navbar-brand'>Asiayo <small>CRM</small></a>
-			<button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
-				<span class='sr-only'>Toggle navigation</span>
-				<span class='icon-bar'></span>
-				<span class='icon-bar'></span>
-				<span class='icon-bar'></span>
-			</button>
-		</div>
-		<ul class='nav navbar-nav navbar-right collapse navbar-collapse'>
+<div id='menu' class='navbar navbar-default navbar-fixed-top'>	
+	<div class='navbar-header'>		
+		<button class='btn btn-success navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'>
+			<span class='sr-only'>Toggle navigation</span>			
+		</button>
+		<div id='logo'>
+			<a href='#'><h4>Asiayo</h4><small>CRM</small></a>
+		</div>	
+	</div>
+	<div class='navbar-collapse collapse'>
+		<ul class='nav navbar-nav navbar-right'>
 			<li ui-sref-active='active'><a ui-sref='home'><span class="glyphicon glyphicon-home"></span> Home</a></li>
 			<li ui-sref-active='active'><a href='#showtable'><span class="glyphicon glyphicon-list"> Table</span></a></li>	
 			<li ui-sref-active='active'><a href='#import'><span class="glyphicon glyphicon-import"> Import</span></a></li>

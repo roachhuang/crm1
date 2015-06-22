@@ -1,48 +1,39 @@
-(function(){
-    'use strict';
-	// angular.module('myApp', ['angularUtils.directives.dirPagination', 'ngCsv']).controller('TblController', ['$scope', 'dataFactory', 'sharing', function($scope, dataFactory, sharing) {
-       //$scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-       //$scope.rows =  []];
-    // the same module as mainApp
-    var app = angular.module('app');
 
+    'use strict'
+    angular.module('app.table')    
     // main controller
-    app.controller('mainCtrl', function($scope){
+    .controller('mainCtrl', function($scope) {
         $scope.data = {}; // using controller inheritance
-    });
+    })
+    .controller('TblController', TblController);
 
-    app.controller('TblController', function($scope, dataFactory, modalService){   
+    TblController.$inject = ['$scope', 'dataFactory', 'modalService'];
+
+    function TblController() {  
         var vm = $scope; 
-        vm.displayMode ='list';
-
+        vm.displayMode = 'list';
         vm.isPopupVisible = false;      
-        vm.composeEmail = {};   
-
+        vm.composeEmail = {};
         vm.actionForBox = 'Add a row';
         vm.row = [];  
-        vm.pageSize=3; 
-        //$scope.currentPage=1;
+        vm.pageSize = 3;        
         vm.reverse = false;
         vm.sortField = 'inn_name';
         vm.showAddBtn = true;
-
         /** function to get detail of row added in mysql referencing php **/
         // remember to change success to then for all functions later when i have time
-        vm.get_row = function() {
-            //vm.data = {}; // sharing $scope.data.sharingRows btw controllers
-        //    $scope.data.sharingRows = dataFactory.getData();      
-            dataFactory.getData().then(function(response){
-                    vm.data.products=response.data;  
-                    vm.currentPage =1;
-                    vm.pageSize = 5; // max no of rows displaying in a page
-                    vm.filteredItems = vm.data.products.lenght; //init for no filter
-                    vm.totalItems = vm.data.products.lenght;
-                    //$scope.rows=data;                             
-                    //console.log(promise.data);          
-                }, function(error){
-                    console.log('faile to read from db' + error);
-                });                      
-        };
+vm.get_row = function() {
+    dataFactory.getData()
+    .then(function(response) {
+        vm.data.products=response.data;  
+        vm.currentPage =1;
+        vm.pageSize = 5; // max no of rows displaying in a page
+        vm.filteredItems = vm.data.products.lenght; //init for no filter
+        vm.totalItems = vm.data.products.lenght;       
+    }, function(error) {
+        console.log('faile to read from db' + error);
+    });                      
+};
         
         /** function to add details for rows in mysql referecing php **/
 
@@ -58,7 +49,7 @@
             vm.row =[];     // clear inputbox
         };
 
-        vm.cancel = function(){
+        vm.cancel = function() {
             vm.row =[];
             vm.showAddBtn = true;
             vm.actionForBox = 'Add a row';
@@ -67,33 +58,19 @@
         /** function to delete row from list of row referencing php **/
 
         vm.delete_row = function(index) { 
-
             modalService.showModal().then(function(result){ 
                 dataFactory.deleteRow(index)      
                     .success(function (data, status, headers, config) {    
                        vm.get_row();
                 });         
-            });    
-
+            });   
         };     
  
-        vm.sendEmail = function(){
+        vm.sendEmail = function() {
             alert('sent');
         };
        
-    /*
-        vm.sendMail = function(){        
-            var link = "mailto:mark.huang@ca-sec.come"
-                 + "?cc=giraftw2002@gmail.com"
-                 + "&subject=" + escape("This is my subject")
-                 + "&body=" + escape(document.getElementById('myText').value);
-
-        window.location.href = link;
-    }
-        }
-    */
         /** fucntion to edit row details from list of row referencing php **/
-
         vm.edit_row = function(index) {
             vm.displayMode='edit';
            vm.showAddBtn = false;
@@ -113,7 +90,7 @@
                 vm.row.addr = data[4];           
                 */
             },
-            function(error){ 
+            function(error) { 
                 console.log('fail to edit row' + error);
             });
         };
@@ -141,13 +118,8 @@
                 console.log(result);             
                 return true;    // ok         
             });
-        };            
+        };
 
-    });  // end of Crmcontroller  
-    /*      
-    // export controller
-    app.controller('ExportController', function($scope){
-        $scope.data = sharing; // sharing $scope.data.sharingRows btw controllers
-    });
-    */
-})();
+    };
+        
+  
