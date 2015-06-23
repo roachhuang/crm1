@@ -2,400 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c45adc0-4422-4966-bd74-7277e18d946b" name="Default" comment="">
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-animate\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-animate\README.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-animate\angular-animate.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-animate\angular-animate.min.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-animate\angular-animate.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-animate\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-animate\index.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-animate\package.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-bootstrap\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-bootstrap\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-bootstrap\ui-bootstrap-tpls.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-bootstrap\ui-bootstrap-tpls.min.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-bootstrap\ui-bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular-bootstrap\ui-bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\README.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\angular-csp.css" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\angular.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\angular.min.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\angular.min.js.gzip" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\angular.min.js.map" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\index.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\angular\package.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\README.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\css\bootstrap-theme.css" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\css\bootstrap-theme.css.map" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\css\bootstrap.css" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\css\bootstrap.css.map" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\css\bootstrap.min.css" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\js\bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\js\bootstrap.min.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\dist\js\npm.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff2" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\grunt\.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\grunt\bs-commonjs-generator.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\grunt\bs-glyphicons-data-generator.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\grunt\bs-lessdoc-parser.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\grunt\bs-raw-files-generator.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\grunt\configBridge.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\grunt\sauce_browsers.yml" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\.jscsrc" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\affix.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\alert.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\button.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\modal.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\popover.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\scrollspy.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\tab.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\js\transition.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\.csscomb.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\.csslintrc" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\badges.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\bootstrap.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\breadcrumbs.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\button-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\carousel.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\close.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\code.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\component-animations.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\dropdowns.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\forms.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\glyphicons.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\grid.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\input-groups.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\jumbotron.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\labels.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\list-group.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\media.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\alerts.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\background-variant.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\border-radius.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\buttons.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\center-block.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\clearfix.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\forms.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\gradients.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\grid-framework.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\grid.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\hide-text.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\image.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\labels.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\list-group.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\nav-divider.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\nav-vertical-align.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\opacity.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\panels.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\progress-bar.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\reset-filter.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\resize.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\responsive-visibility.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\size.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\tab-focus.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\table-row.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\text-emphasis.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\text-overflow.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\mixins\vendor-prefixes.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\modals.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\navbar.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\navs.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\normalize.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\pager.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\pagination.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\panels.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\popovers.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\print.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\progress-bars.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\responsive-embed.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\responsive-utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\scaffolding.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\tables.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\theme.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\thumbnails.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\tooltip.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\type.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\utilities.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\variables.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\less\wells.less" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\package.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\bootstrap\package.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\MIT-LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\dist\jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\dist\jquery.min.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\dist\jquery.min.map" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax\jsonp.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax\load.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax\parseJSON.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax\parseXML.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax\script.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax\var\nonce.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax\var\rquery.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\ajax\xhr.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\attributes.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\attributes\attr.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\attributes\classes.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\attributes\prop.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\attributes\support.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\attributes\val.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\callbacks.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\core.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\core\access.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\core\init.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\core\parseHTML.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\core\ready.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\core\var\rsingleTag.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\addGetHookIf.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\curCSS.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\defaultDisplay.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\hiddenVisibleSelectors.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\support.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\swap.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\var\cssExpand.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\var\getStyles.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\var\isHidden.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\var\rmargin.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\css\var\rnumnonpx.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\data.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\data\Data.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\data\accepts.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\data\var\data_priv.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\data\var\data_user.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\deferred.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\deprecated.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\dimensions.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\effects.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\effects\Tween.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\effects\animatedSelector.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\event.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\event\ajax.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\event\alias.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\event\support.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\exports\amd.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\exports\global.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\intro.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\jquery.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\manipulation.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\manipulation\_evalUrl.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\manipulation\support.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\manipulation\var\rcheckableType.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\offset.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\outro.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\queue.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\queue\delay.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\selector-native.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\selector-sizzle.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\selector.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\serialize.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\sizzle\dist\sizzle.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\sizzle\dist\sizzle.min.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\sizzle\dist\sizzle.min.map" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\traversing.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\traversing\findFilter.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\traversing\var\rneedsContext.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\arr.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\class2type.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\concat.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\hasOwn.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\indexOf.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\pnum.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\push.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\rnotwhite.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\slice.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\strundefined.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\support.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\var\toString.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\jquery\src\wrap.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\.bower.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\.gitattributes" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\.jshintrc" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\README.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\ROADMAP.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\docs\css\style.css" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\docs\nav.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\karma.conf.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\changelog.tpl.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\app.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\demo.css" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\github-16px.png" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\header.png" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\img\glyphicons-halflings-white.png" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\img\glyphicons-halflings.png" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\plunker.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\rainbow-generic.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\rainbow-html.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\rainbow-javascript.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\rainbow.css" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\rainbow.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\smoothscroll-angular-custom.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\assets\uglifyjs.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\demo\index.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\raw-files-generator.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\test-lib\angular-mocks.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\test-lib\angular.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\test-lib\helpers.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\test-lib\jquery-1.8.2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\misc\validate-commit-msg.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\package.json" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\accordion\accordion.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\accordion\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\accordion\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\accordion\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\accordion\test\accordion.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\alert\alert.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\alert\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\alert\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\alert\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\alert\test\alert.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\alert\test\dismissOnTimeout.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\bindHtml\bindHtml.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\buttons\buttons.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\buttons\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\buttons\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\buttons\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\buttons\test\buttons.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\carousel\carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\carousel\docs\README.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\carousel\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\carousel\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\carousel\test\carousel.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\collapse\collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\collapse\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\collapse\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\collapse\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\collapse\test\collapse.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\dateparser\dateparser.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\dateparser\test\dateparser.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\datepicker\datepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\datepicker\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\datepicker\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\datepicker\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\datepicker\test\datepicker.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\dropdown\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\dropdown\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\dropdown\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\dropdown\dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\dropdown\test\dropdown.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\modal\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\modal\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\modal\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\modal\modal.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\modal\test\modal.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\modal\test\modalWindow.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\modal\test\stackedMap.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\pagination\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\pagination\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\pagination\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\pagination\pagination.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\pagination\test\pager.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\pagination\test\pagination.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\popover\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\popover\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\popover\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\popover\popover.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\popover\test\popover.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\position\position.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\position\test\position.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\position\test\test.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\progressbar\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\progressbar\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\progressbar\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\progressbar\progressbar.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\progressbar\test\progressbar.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\rating\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\rating\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\rating\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\rating\rating.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\rating\test\rating.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tabs\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tabs\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tabs\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tabs\tabs.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tabs\test\tabs.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\timepicker\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\timepicker\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\timepicker\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\timepicker\test\timepicker.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\timepicker\timepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tooltip\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tooltip\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tooltip\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tooltip\test\tooltip.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tooltip\test\tooltip2.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\tooltip\tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\transition\test\transition.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\transition\transition.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\typeahead\docs\demo.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\typeahead\docs\demo.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\typeahead\docs\readme.md" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\typeahead\test\typeahead-highlight.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\typeahead\test\typeahead-parser.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\typeahead\test\typeahead-popup.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\typeahead\test\typeahead.spec.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\src\typeahead\typeahead.js" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\accordion\accordion-group.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\accordion\accordion.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\alert\alert.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\carousel\carousel.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\carousel\slide.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\datepicker\datepicker.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\datepicker\day.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\datepicker\month.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\datepicker\popup.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\datepicker\year.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\modal\backdrop.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\modal\window.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\pagination\pager.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\pagination\pagination.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\popover\popover.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\progressbar\bar.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\progressbar\progress.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\progressbar\progressbar.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\rating\rating.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\tabs\tab.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\tabs\tabset.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\timepicker\timepicker.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\tooltip\tooltip-html-unsafe-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\tooltip\tooltip-popup.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\typeahead\typeahead-match.html" afterPath="" />
-      <change type="DELETED" beforePath="G:\apps\crm\bower_components\ui-bootstrap\template\typeahead\typeahead-popup.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="crm.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -416,11 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.4389359">
+              <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -436,10 +43,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bower.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bower.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bower.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -455,6 +62,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -519,6 +127,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -572,7 +194,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1046" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1046" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -627,14 +249,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -647,6 +261,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4389359">
+          <caret line="49" column="17" selection-start-line="49" selection-start-column="17" selection-end-line="49" selection-end-column="17" />
           <folding />
         </state>
       </provider>
