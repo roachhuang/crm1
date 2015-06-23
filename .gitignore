@@ -2,4 +2,6 @@
 ./bower_components/*
 ./node_modules/*
 ./minijs/*
+log/*
+minijs/*
 
