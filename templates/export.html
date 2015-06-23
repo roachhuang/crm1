@@ -1,8 +1,0 @@
-<div class='well'>
-<h2>There are {{data.products.length}} record(s).</h2><br/>
-	 
-<!-- excel 2010 doesn't support utf-8, so open the csv with google doc or openOffice --> 
-<label>Filename: </label><input type=text ng-model='csvfilename' placeholder='crm'>
-
-<button type="button" ng-csv="data.products" csv-header="['id', city, 'inn_name', 'eng_name', 'jpn_name', 'tel', 'fax', 'mobile', 'addr', 'eng_addr', 'jpn_addr', 'status', 'website', 'email', 'landlord', 'type', 'no_of_room', 'prices', 'traffic', 'certificated_data', 'remodel_date', 'pix_upload_date', 'source', 'in_charge', 'approach']" filename= {{csvfilename}}.csv>Export</button>
-<div>
