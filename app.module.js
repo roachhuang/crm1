@@ -19,7 +19,7 @@
     /* Initialize the controller by name 'PhoneListCtrl' holds the information of phone in form of array with keys name, snipper, price , quantity */
 
     /* $scope argument passed in function is a key arguments should be passed with exactly the same name */
-    .constant("templates", "../templates/") 
+    .constant("TEMPLATE_URL", "../templates/") 
     .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {     
         $urlRouterProvider.otherwise('./showtable.html');
         $stateProvider
@@ -28,13 +28,13 @@
             {    
                 url: '/import',       
                 controller: 'ImportController',
-                templateUrl: templates + "import.html"
+                templateUrl: "./templates/import.html"
             })  
         .state("export",
             {   
                 url: '/export',        
                 //controller: 'ExportController',
-                templateUrl: templates + "export.html"
+                templateUrl: "./templates/export.html"
             }) 
         .state("showtable",
             {       
@@ -49,7 +49,7 @@
         .state("home",
             {    
                 url: '/',   
-                templateUrl: templates + "home.html"
+                templateUrl: "./templates/home.html"
             })  
                    
     }]);    

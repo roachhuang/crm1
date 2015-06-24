@@ -1,7 +1,7 @@
     'use strict'
 	angular
        .module('app.core')
-	   .constant("dataUrl", "../php/db.php/?action=")
+	   .constant("dataUrl", "./php/db.php/?action=")
 	   .factory('dataFactory', dataFactory);
        
     // seprate injection - clean code    
