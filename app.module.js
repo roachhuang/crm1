@@ -28,13 +28,13 @@
             {    
                 url: '/import',       
                 controller: 'ImportController',
-                templateUrl: this.templates + "import.html"
+                templateUrl: templates + "import.html"
             })  
         .state("export",
             {   
                 url: '/export',        
                 //controller: 'ExportController',
-                templateUrl: this.templates + "export.html"
+                templateUrl: templates + "export.html"
             }) 
         .state("showtable",
             {       
@@ -49,7 +49,7 @@
         .state("home",
             {    
                 url: '/',   
-                templateUrl: this.templates + "home.html"
+                templateUrl: templates + "home.html"
             })  
                    
     }]);    

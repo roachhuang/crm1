@@ -9,7 +9,7 @@
 
     TblController.$inject = ['$scope', 'dataFactory', 'modalService'];
 
-    function TblController() {  
+    function TblController($scope, dataFactory, modalService) {  
         var vm = $scope; 
         vm.displayMode = 'list';
         vm.isPopupVisible = false;      
